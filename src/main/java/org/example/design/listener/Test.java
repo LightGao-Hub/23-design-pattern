@@ -18,8 +18,10 @@ package org.example.design.listener;
 public class Test {
     public static void main(String[] args) {
         final Teacher teacher = new Teacher("dandan", 32);
+        // 此TeacherListener接口即和javaWeb中的servletListener
+        final TeacherListener teacherListener = new TeacherListenerImpl();
         // 注册监听
-        teacher.registerListener(new TeacherListenerImpl());
+        teacher.registerListener(teacherListener);
         teacher.init();
         teacher.destroy();
     }
