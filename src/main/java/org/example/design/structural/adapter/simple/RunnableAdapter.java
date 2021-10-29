@@ -1,4 +1,4 @@
-package org.example.design.structural.adapter.one;
+package org.example.design.structural.adapter.simple;
 
 import java.util.concurrent.Callable;
 

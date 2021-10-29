@@ -1,4 +1,4 @@
-package org.example.design.structural.adapter.two;
+package org.example.design.structural.adapter.complex;
 
 /**
  *  方钉类

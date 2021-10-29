@@ -1,4 +1,4 @@
-package org.example.design.structural.adapter.two;
+package org.example.design.structural.adapter.complex;
 
 /**
  *  此为装饰器模式：
