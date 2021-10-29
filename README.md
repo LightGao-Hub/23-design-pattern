@@ -65,8 +65,7 @@
             迪米特法则（类与类之间的亲疏关系）  
     
 ### 项目结构
-![binaryTree](./pictrue/struct.jpg "struct")
-    
+![github](https://raw.githubusercontent.com/gl0726/-23-design-pattern/master/picture/struct.jpg "github")
     
             
 
