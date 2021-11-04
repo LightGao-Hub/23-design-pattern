@@ -4,6 +4,7 @@ import com.sun.tools.javac.util.Assert;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Author: GL
@@ -11,13 +12,14 @@ import java.util.Map;
  */
 public class StudentFactory {
 
-    // 持有缓存:
-    private static final Map<Integer, Student> cache = new HashMap<>();
+    // 持有缓存-使用线程安全map:
+    private static final Map<Integer, Student> cache = new ConcurrentHashMap<>();
 
     public static Student create(int id, String name) {
         Assert.check(id >= 0);
         Assert.check(name != null);
-        Student std = cache.get(id);
+        Student std = cache.getOrDefault(id, null);
+        // 缓存中存在:
         if (std == null) {
             // 未找到,创建新对象:
             System.out.println(String.format("create new Student(%s, %s)", id, name));
@@ -25,8 +27,7 @@ public class StudentFactory {
             // 放入缓存:
             cache.put(id, std);
         } else {
-            // 缓存中存在:
-            System.out.println(String.format("return cached Student:%s", std.toString()));
+            System.out.println(String.format("return cached Student:%s", std));
         }
         return std;
     }
