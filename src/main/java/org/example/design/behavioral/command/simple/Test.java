@@ -31,7 +31,7 @@ import org.example.design.behavioral.command.usually.one.StockReceive;
  *  优点：通过将命令设计成不同命令类，将每一个命令抽象，让发送方和接收方都无需了解彼此，彻底将双方解耦，并且实现了开闭原则
  *       如接收方增加一个函数，那么只需要创建一个新的StockCommand类即可！其他类无需改动；
  *
- *  不足：当遇到复杂的命令场景时，我们应该具有历史任务的一个备份和撤回操作！ 可以参考complex包下的Test
+ *  不足：当遇到复杂的命令场景时，我们应该具有历史任务的一个备份和撤回操作！ 可以参考complete包下的Test
  *
  * Author: GL
  * Date: 2021-11-05

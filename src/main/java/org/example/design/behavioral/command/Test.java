@@ -8,7 +8,7 @@ package org.example.design.behavioral.command;
  *
  *  为了方便理解，先参考usually.one包下的Test类； 然后参考usually.two包下的Test类
  *
- *  然后参考simple包下的简单命令模式后，进而参考复杂版complex包下的命令模式
+ *  然后参考simple包下的简单命令模式后，进而参考复杂版complete包下的命令模式
  *
  * Author: GL
  * Date: 2021-11-05

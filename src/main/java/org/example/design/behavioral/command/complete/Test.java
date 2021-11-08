@@ -1,4 +1,4 @@
-package org.example.design.behavioral.command.complex;
+package org.example.design.behavioral.command.complete;
 
 import org.example.design.behavioral.command.usually.one.StockManagerReceive;
 import org.example.design.behavioral.command.usually.one.StockReceive;

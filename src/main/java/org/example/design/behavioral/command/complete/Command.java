@@ -1,4 +1,4 @@
-package org.example.design.behavioral.command.complex;
+package org.example.design.behavioral.command.complete;
 
 /**
  *  命令标识接口
