@@ -39,6 +39,7 @@ package org.example.design.behavioral.iterator.complete;
 public class Test {
     public static void main(String[] args) {
         ArrayCollection<Integer> integers = new ListArrayCollection<>(1, 2, 3, 4, 5, 6);
+
         new Thread(() -> {
             for (Integer integer : integers) {
                 System.out.println(String.format(" %s - %s", Thread.currentThread().getName(), integer));
@@ -50,7 +51,10 @@ public class Test {
             }
         }).start();
 
-        // 此时插入元素，会导致异常
-        // integers.add(6);
+        // 此时删除数据，迭代器会报错
+        integers.remove(3);
+        // 此时插入元素，无伤大雅
+        integers.add(7);
+        integers.add(8);
     }
 }
