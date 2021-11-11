@@ -29,6 +29,8 @@ import org.example.design.behavioral.command.usually.one.StockReceive;
  *  总结：
  *      此案例将命令存储在队列以实现记录历史命令，注意此队列要是线程安全队列
  *
+ *  缺点:
+ *      目前的设计是客户端和服务端一对一，当客户端对应多个服务端的时候，则每一个命令都需要引用多个服务端，此时引用就会很复杂，解决方案是参考中介模式+命令模式[behavioral.mediator.perfect包]
  *
  * Author: GL
  * Date: 2021-11-05

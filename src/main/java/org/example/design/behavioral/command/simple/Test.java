@@ -31,7 +31,9 @@ import org.example.design.behavioral.command.usually.one.StockReceive;
  *  优点：通过将命令设计成不同命令类，将每一个命令抽象，让发送方和接收方都无需了解彼此，彻底将双方解耦，并且实现了开闭原则
  *       如接收方增加一个函数，那么只需要创建一个新的StockCommand类即可！其他类无需改动；
  *
- *  不足：当遇到复杂的命令场景时，我们应该具有历史任务的一个备份和撤回操作！ 可以参考complete包下的Test
+ *  不足：
+ *      1、当遇到复杂的命令场景时，我们应该具有历史任务的一个备份和撤回操作！ 可以参考complete包下的Test
+ *      2、目前的设计是客户端和服务端一对一，当客户端对应多个服务端的时候，则每一个命令都需要引用多个服务端，此时引用就会很复杂，解决方案是参考中介模式+命令模式[behavioral.mediator.perfect包]
  *
  * Author: GL
  * Date: 2021-11-05
