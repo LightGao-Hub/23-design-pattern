@@ -2,6 +2,7 @@ package org.example.design.behavioral.command.complete;
 
 import org.example.design.behavioral.command.usually.one.Client;
 
+import java.util.Deque;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingDeque;
 
@@ -13,7 +14,7 @@ import java.util.concurrent.LinkedBlockingDeque;
  */
 public abstract class StockClient implements Client {
     // 命令存储队列-线程安全队列
-    private final Queue<StockCommand> queue = new LinkedBlockingDeque<>();
+    private final Deque<StockCommand> queue = new LinkedBlockingDeque<>();
 
     public abstract void send(StockCommand... stockCommand);
 
@@ -23,7 +24,7 @@ public abstract class StockClient implements Client {
         System.out.println(this.queue);
     }
 
-    public Queue<StockCommand> getQueue() {
+    public Deque<StockCommand> getQueue() {
         return this.queue;
     }
 }

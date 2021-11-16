@@ -30,6 +30,9 @@ package org.example.design.behavioral.mediator.perfect;
  *      不过此方式有局限性，即客户端和服务端是一对一的方式，当客户端需要访问多个服务端的时候，命令模式的命令实体类则需要绑定多个服务端的引用，这就变成了大杂烩
  *      而此案例正是解决中介模式和命令模式的不足，互补长短，将双发的优点结合互补，通过中介模式将服务端的引用统一进行注册管理！通过命令模式将程序解耦并实现扩展！
  *
+ *  优化：可以在此基础上 + 备忘录模式，即AbstractDatabase包含一个Caretaker备忘录负责人引用，DatabaseCommand实现Originator发起人接口实现备份！
+ *       暂未实现，可参考[behavioral.memento.complete包]
+ *
  * Author: GL
  * Date: 2021-11-10
  */

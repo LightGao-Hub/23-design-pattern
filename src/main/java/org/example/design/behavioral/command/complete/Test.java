@@ -27,10 +27,16 @@ import org.example.design.behavioral.command.usually.one.StockReceive;
  * └────────────────┘      └─────────────────┘            └───────────────┘    └────────────────────┘
  *
  *  总结：
- *      此案例将命令存储在队列以实现记录历史命令，注意此队列要是线程安全队列
+ *      此案例将命令存储在队列以实现记录历史命令，注意此队列要是线程安全队列，且支持栈结构从后读取
  *
  *  缺点:
- *      目前的设计是客户端和服务端一对一，当客户端对应多个服务端的时候，则每一个命令都需要引用多个服务端，此时引用就会很复杂，解决方案是参考中介模式+命令模式[behavioral.mediator.perfect包]
+ *      1、目前的设计是客户端和服务端一对一，当客户端对应多个服务端的时候，则每一个命令类内部都需要引用多个服务端[股票经理人A, 股票经理人B, 股票经理人C]，
+ *          此时命令实体类中的引用就会很复杂[可能一个buy命令实体类需要引用A,B两个股票经理人]，解决方案是参考中介模式+命令模式[behavioral.mediator.perfect包]
+ *
+ *      2、注意：命令模式中的记录历史命令是有缺陷的，此模式的记录命令并不是快照方式，而是将原有的引用放进队列，此时如果命令修改，则队列中的元素也会修改，并不会起到快照作用，所以此处有漏洞。
+ *         解决：参考备忘录模式[behavioral.memento.complete]
+ *
+ *      3、撤销不支持一次性撤销多条功能，此处在备忘录模式下完善[behavioral.memento.complete]
  *
  * Author: GL
  * Date: 2021-11-05
@@ -44,9 +50,11 @@ public class Test {
         StockCommand stockSellCommand = new StockSellCommand(maYun);
         // 构建用户
         StockClient liJie = new StockUserClient("liJie");
-        // 先买再卖，再买，再买
-        liJie.send(stockBuyCommand, stockSellCommand, stockBuyCommand, stockBuyCommand);
-        // 撤回最近一次购买
+        // 先买再卖，再买，再卖
+        liJie.send(stockBuyCommand, stockSellCommand, stockBuyCommand, stockSellCommand);
+        // 撤回最近一次
+        liJie.undo();
+        // 再次撤回最近一次
         liJie.undo();
         // 查看历史命令
         liJie.select();
