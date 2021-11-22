@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- *  优先级责任链处理抽象类，支持优先级处理
+ *  优先级责任链处理抽象类，支持优先级处理，此类可以单独抽离出去供其他需要优先级队列使用
  *
  * Author: GL
  * Date: 2021-11-01

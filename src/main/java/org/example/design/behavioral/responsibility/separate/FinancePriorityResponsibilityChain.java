@@ -8,7 +8,8 @@ import java.util.Map;
  * Author: GL
  * Date: 2021-10-31
  */
-public class FinancePriorityResponsibilityChain<K extends Comparable<K>, V extends FinanceHandler<K>> extends PriorityHandlerResponsibilityChain<K, V> {
+public class FinancePriorityResponsibilityChain<K extends Comparable<K>, V extends FinanceHandler<K>>
+        extends PriorityHandlerResponsibilityChain<K, V> {
 
     public void addHandler(V handler) {
         super.getHandlers().put(handler.weight, handler);
