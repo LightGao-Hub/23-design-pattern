@@ -87,7 +87,7 @@ public class ListArrayCollection<T> implements ArrayCollection<T> {
      *  内部类实现Iterator，使用内部类的方便之处在于可以无形中引用外部类中的变量，如下使用index < array.length 十分方便;
      */
     private final class ListIterator implements Iterator<T> {
-
+        // index 在创建时默认为0
         int index;
         int expectedModCount = modCount;
 
