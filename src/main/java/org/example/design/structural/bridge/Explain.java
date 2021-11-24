@@ -64,7 +64,7 @@ import org.example.design.structural.bridge.engine.OilEngine;
  * Author: GL
  * Date: 2021-10-28
  */
-public class Test {
+public class Explain {
 
     public static void main(String[] args) {
         // 构建奔驰SUV混合动力

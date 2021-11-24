@@ -13,5 +13,5 @@ package org.example.design.behavioral.command;
  * Author: GL
  * Date: 2021-11-05
  */
-public class Test {
+public class Explain {
 }

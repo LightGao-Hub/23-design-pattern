@@ -29,5 +29,5 @@ package org.example.design.behavioral.memento;
  * Author: GL
  * Date: 2021-11-15
  */
-public class Test {
+public class Explain {
 }

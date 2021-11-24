@@ -45,5 +45,5 @@ package org.example.design.behavioral.iterator;
  * Author: GL
  * Date: 2021-11-08
  */
-public class Test {
+public class Explain {
 }

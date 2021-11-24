@@ -36,5 +36,5 @@ package org.example.design.behavioral.mediator;
  * Author: GL
  * Date: 2021-11-10
  */
-public class Test {
+public class Explain {
 }
