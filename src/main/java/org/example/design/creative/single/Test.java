@@ -16,7 +16,7 @@ package org.example.design.creative.single;
  *          由于懒汉式的实现是线程安全的，这样会降低整个访问的速度，而且每次都要判断。那么有没有更好的方式实现呢？
  *          -参考：EagerSingleton类
  *
- *      3、双重检查加锁：此方式并不推荐，因为需要强制指定JVM指令顺序，所以没有特别的需要，不要使用。
+ *      3、双重检查加锁：此方式并不推荐，因为需要强制指定JVM指令顺序，所以没有特别的需要，不建议使用。
  *
  *      4、静态内部类实现：比较完美
  *          -特点：安全, 高效, 且懒加载，可以通过反射破坏
@@ -45,8 +45,8 @@ package org.example.design.creative.single;
  */
 public class Test {
     public static void main(String[] args) {
-        final Singleton uniqueInstance = Singleton.uniqueInstance;
-        final Singleton uniqueInstance2 = Singleton.uniqueInstance;
+        final Singleton uniqueInstance = Singleton.INSTANCE;
+        final Singleton uniqueInstance2 = Singleton.INSTANCE;
         uniqueInstance.singletonOperation();
         uniqueInstance2.singletonOperation();
         System.out.println(uniqueInstance == uniqueInstance2);

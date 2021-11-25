@@ -15,14 +15,14 @@ public enum Singleton {
      * 定义一个枚举的元素，它就代表了Singleton的一个实例。
      * 枚举元素必须要在第一行！否则会和业务的成员变量混淆报错！
      */
-    uniqueInstance;
+    INSTANCE;
 
     private final String name = "single";
 
     /**
      * 单例可以有自己的操作
      */
-    public void singletonOperation(){
+    public void singletonOperation() {
         System.out.println(this.toString());
     }
 
