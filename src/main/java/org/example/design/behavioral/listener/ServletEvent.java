@@ -7,13 +7,13 @@ import java.util.EventObject;
  * Author: GL
  * Date: 2021-10-24
  */
-public class TeacherEvent extends EventObject {
+public class ServletEvent extends EventObject {
 
-    public TeacherEvent(Teacher source) {
+    public ServletEvent(Servlet source) {
         super(source);
     }
 
-    public Teacher getSource() {
-        return (Teacher) this.source;
+    public Servlet getSource() {
+        return (Servlet) this.source;
     }
 }
