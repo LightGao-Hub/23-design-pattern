@@ -26,7 +26,7 @@ package org.example.design.behavioral.listener;
  *                │ └getSource(){}│           │ └process(ServletEvent event)    │
  *                └───────────────┘           │ └destroyed(ServletEvent event)  │
  *                                            └─────────────────────────────────┘
- *                               被监听父类                     ▲                     监听类，可以有多个
+ *                               被监听者父类                   ▲                     监听者类，可以有多个
  *                                 ┌──────────────────────────┼───────────────────────────┐─────────────────────────────────────────┐
  * ┌────────────────────────────────────────────────┐                   ┌─────────────────────────────────┐         ┌─────────────────────────────────┐
  * │ServletSource                                   │                   │ServletListenerImplA             │         │ServletListenerImplB             │

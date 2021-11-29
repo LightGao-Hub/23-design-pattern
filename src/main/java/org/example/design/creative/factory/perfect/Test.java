@@ -30,8 +30,8 @@ package org.example.design.creative.factory.perfect;
 public class Test {
     /**
      * 使用两种方式都可以：
-     *  1、接口父类指向子类
-     *  2、枚举简化调用
+     *  1、接口父类指向子类引用后创建
+     *  2、枚举简化调用创建
      * @param args
      */
     public static void main(String[] args) {

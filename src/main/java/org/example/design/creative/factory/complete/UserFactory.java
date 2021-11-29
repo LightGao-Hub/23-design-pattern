@@ -1,6 +1,6 @@
 package org.example.design.creative.factory.complete;
 
-import org.example.design.creative.factory.simple.factory2.Parent;
+import org.example.design.creative.factory.simple.factory2.Person;
 
 /**
  *  工厂接口
@@ -10,5 +10,5 @@ import org.example.design.creative.factory.simple.factory2.Parent;
  */
 public interface UserFactory {
 
-    Parent create(String name);
+    Person create(String name);
 }

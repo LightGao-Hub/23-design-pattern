@@ -1,6 +1,7 @@
 package org.example.design.creative.factory.perfect;
 
 import org.example.design.creative.factory.simple.factory2.Parent;
+import org.example.design.creative.factory.simple.factory2.Person;
 
 /**
  *  家长工厂类

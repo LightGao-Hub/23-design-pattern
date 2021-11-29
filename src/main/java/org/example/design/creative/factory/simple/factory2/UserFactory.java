@@ -15,7 +15,7 @@ public final class UserFactory {
     private UserFactory(){}
 
     // 静态函数
-    public static Parent create(UserType userType, String name) {
+    public static Person create(UserType userType, String name) {
         Objects.requireNonNull(userType);
         switch (userType) {
             case USER_CHILD:
