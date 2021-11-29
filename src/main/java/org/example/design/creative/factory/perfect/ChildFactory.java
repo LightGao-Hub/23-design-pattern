@@ -15,7 +15,7 @@ public enum ChildFactory implements UserFactory {
     INSTANCE;
 
     @Override
-    public Child create(String name) {
+    public Person create(String name) {
         return new Child(name);
     }
 }

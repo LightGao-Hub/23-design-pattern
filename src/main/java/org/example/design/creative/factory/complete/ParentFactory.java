@@ -2,6 +2,7 @@ package org.example.design.creative.factory.complete;
 
 import org.example.design.creative.factory.simple.factory2.Child;
 import org.example.design.creative.factory.simple.factory2.Parent;
+import org.example.design.creative.factory.simple.factory2.Person;
 
 /**
  *  家长工厂类
@@ -11,7 +12,7 @@ import org.example.design.creative.factory.simple.factory2.Parent;
  */
 public class ParentFactory implements UserFactory {
     @Override
-    public Parent create(String name) {
+    public Person create(String name) {
         return new Parent(name);
     }
 }
