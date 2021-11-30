@@ -10,9 +10,8 @@ import java.util.Objects;
  * Author: GL
  * Date: 2021-11-25
  */
-public final class UserFactory {
-
-    private UserFactory(){}
+public enum UserFactory {
+    ; // 无实例
 
     // 静态函数
     public static Person create(UserType userType, String name) {
