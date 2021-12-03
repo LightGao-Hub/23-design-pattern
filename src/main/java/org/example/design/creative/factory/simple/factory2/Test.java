@@ -10,7 +10,7 @@ package org.example.design.creative.factory.simple.factory2;
  *  结构：
  *             静态工厂类                               枚举类
  *     ┌───────────────────────────────────┐
- *     │UserFactory                        │       ┌────────────┐
+ *     │enum UserFactory                   │       ┌────────────┐
  *     │  └static Person create(UserType)  │------>│UserType    │
  *     └────────────│──────────────────────┘       │└USER_PARENT│
  *                  │                              │└USER_CHILD │
@@ -26,7 +26,7 @@ package org.example.design.creative.factory.simple.factory2;
  *                                         └────────┘       └───────┘
  *
  *  注意：UserFactory类
- *        1、此类可以设计为enum ; 无法被创建
+ *        1、此类可以设计为enum, 更安全
  *        3、此类不能继承某个Factory接口的create抽象函数再实现, 因为create函数是静态函数！接口中的函数只能是普通函数，如果实现Factory接口的create函数，实现后的只能是普通函数！
  *           外界就不能直接调用
  *        4、create函数返回的类型要是Parent 和 Child 的共同父类

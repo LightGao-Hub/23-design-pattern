@@ -3,16 +3,13 @@ package org.example.design.creative.factory.simple.factory1;
 import java.util.Objects;
 
 /**
- *  工厂类：
- *      注意此设计UserFactory类是不能继承某个Factory接口的create抽象函数再实现, 因为create函数是静态函数！如果实现Factory接口的create函数，实现后的只能是普通函数！
- *      外界就不能直接调用，而是先实现后调用！
+ *  工厂类：此类设计成枚举更为方便安全
  *
  * Author: GL
  * Date: 2021-11-25
  */
-public final class UserFactory {
-
-    private UserFactory(){}
+public enum UserFactory {
+    ; // 无实例
 
     // 静态函数
     public static User create(String name) {

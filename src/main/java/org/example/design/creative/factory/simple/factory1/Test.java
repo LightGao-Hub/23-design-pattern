@@ -9,13 +9,12 @@ package org.example.design.creative.factory.simple.factory1;
  *
  *  结构：
  *      ┌─────────────────────┐
- *      │UserFactory          │          ┌─────┐
- *      │ └static create(){}  │<---------│User │
+ *      │enum UserFactory     │          ┌─────┐
+ *      │ └create(){}         │<---------│User │
  *      └─────────────────────┘          └─────┘
  *
  *  注意：UserFactory类
- *      1、此类要设计成final class不被继承
- *      2、此类要私有化构造函数，避免被创建
+ *      1、此类要设计成enum枚举类，更安全
  *      3、此类是不能继承某个Factory接口的create抽象函数再实现, 因为create函数是静态函数！接口中的函数只能是普通函数，如果实现Factory接口的create函数，实现后的只能是普通函数！
  *         外界就不能直接调用
  *
