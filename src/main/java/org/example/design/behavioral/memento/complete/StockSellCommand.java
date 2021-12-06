@@ -33,7 +33,17 @@ public class StockSellCommand extends StockCommand {
 
     @Override
     public Memento<StockCommand> createMemento() {
-        return new Memento<>(new StockSellCommand(super.getStockService()));
+        return new Memento<>(this.clone());
+    }
+
+    @Override
+    protected StockSellCommand clone() {
+        try {
+            return (StockSellCommand)super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override

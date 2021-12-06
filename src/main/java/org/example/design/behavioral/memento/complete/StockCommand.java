@@ -9,7 +9,7 @@ import org.example.design.behavioral.memento.simple.Originator;
  * Author: GL
  * Date: 2021-11-05
  */
-public abstract class StockCommand implements Command, Originator<StockCommand> {
+public abstract class StockCommand implements Command, Originator<StockCommand>, Cloneable {
     // 持有服务端
     private final StockReceive stockService;
 

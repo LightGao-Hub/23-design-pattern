@@ -11,14 +11,17 @@ package org.example.design.behavioral.memento.simple;
  *        │  └createMemento()         │     │  └CopyOnWriteArrayList<>  │   │  └state<> │
  *        │  └restoreMemento(Memento) │     └───────────────────────────┘   └───────────┘
  *        └───────────────────────────┘
- *                    ▲
- *                    │
- *               ┌──────────┐
+ *                    ▲                    ┌───────────┐
+ *                    │------------------->│ Cloneable │  克隆接口
+ *               ┌──────────┐              └───────────┘
  *               │GameRole  │
  *               └──────────┘
  *
- *  不足：不难看出此备忘录的负责人Caretaker只在main函数中出现，这在业务层面是不可能的，一般是结合业务有一个类持有，参考[complete]包
  *
+ *  不足：
+ *      1、不难看出此备忘录的负责人Caretaker引用只有用户管理，这在业务层面是不可能的，一般是结合业务，有一个类持有Caretaker引用，
+ *          并且备忘录模式可以和命令行模式进行结合，参考[complete]包
+ *      2、GameRole的克隆方式可以升级为原型模式，可以参考[creative.prototype.complete.usually包]
  *
  * Author: GL
  * Date: 2021-11-15

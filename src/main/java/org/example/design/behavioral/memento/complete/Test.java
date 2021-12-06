@@ -14,12 +14,12 @@ import org.example.design.behavioral.command.usually.one.StockReceive;
  *     └────────┘            │  └LinkedBlockingDeque<Memento> │<--------│ Memento   │       │ Command │                 ┌───────────────────────────┐           │ Receive │
  *          ▲                └────────────────────────────────┘         │  └state<> │       └─────────┘                 │ Originator                │           └─────────┘
  *          │                           ▲                               └───────────┘            ▲                      │  └createMemento()         │                ▲
- *    ┌──────────────┐                  │                                                        │─────────────────────>│  └restoreMemento(Memento) │                │
- *    │StockClient   │                  │                                                 ┌─────────────┐               └───────────────────────────┘         ┌─────────────┐
- *    │└caretaker    │------------------┘                                                 │StockCommand │                                                     │StockReceive │ 只有StockCommand持有StockReceive引用
- *    └──────────────┘                                                                    │└stockService│<----------------------------------------------------│             │
+ *    ┌──────────────┐                  │                          ┌─────────────────────────────│─────────────────────>│  └restoreMemento(Memento) │                │
+ *    │StockClient   │                  │                  ┌───────────┐                  ┌─────────────┐               └───────────────────────────┘         ┌─────────────┐
+ *    │└caretaker    │------------------┘                  │ Cloneable │                  │StockCommand │                                                     │StockReceive │ 只有StockCommand持有StockReceive引用
+ *    └──────────────┘                                     └───────────┘                  │└stockService│<----------------------------------------------------│             │
  *          ▲                                                                             └─────────────┘                                                     └─────────────┘
- *          │                                                                                    ▲                                                                    ▲
+ *          │                                                 克隆接口                             ▲                                                                    ▲
  *   ┌────────────────┐                                                          ┌───────────────┼───────────────┐                                                    │
  *   │StockUserClient │                                                   ┌─────────────────┐            ┌───────────────┐                                   ┌────────────────────┐
  *   └────────────────┘                                                   │StockSellCommand │            │StockBuyCommand│                                   │StockManagerReceive │
