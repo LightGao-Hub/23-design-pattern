@@ -10,12 +10,9 @@ import lombok.Getter;
  */
 public abstract class AbstractDatabase<T> {
     @Getter
-    private final AbstractMediator<T> mediator;    // 中介者
-    @Getter
     private final DatabaseCommand<T> databaseCommand;  // 必须包含一个命令
 
-    public AbstractDatabase(AbstractMediator<T> mediator, DatabaseCommand<T> databaseCommand) {
-        this.mediator = mediator;
+    public AbstractDatabase(DatabaseCommand<T> databaseCommand) {
         this.databaseCommand = databaseCommand;
     }
 

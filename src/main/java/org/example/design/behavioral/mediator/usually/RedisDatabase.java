@@ -9,7 +9,7 @@ import java.util.List;
  * Author: GL
  * Date: 2021-11-10
  */
-public class RedisDatabase<T> extends AbstractDatabase<T> {
+public class RedisDatabase<T> implements Database<T> {
 
     private final List<T> dataset = new ArrayList<>();
 

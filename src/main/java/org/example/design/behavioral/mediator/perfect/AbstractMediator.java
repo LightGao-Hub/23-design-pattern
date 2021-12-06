@@ -15,13 +15,13 @@ import java.util.Map;
 public abstract class AbstractMediator<T> {
     // 存储数据库类型及值
     @Getter
-    protected final Map<DatabaseType, AbstractDatabase<T>> dataMap = new HashMap<>();
+    protected final Map<DatabaseType, Colleague<T>> dataMap = new HashMap<>();
 
-    public void register(DatabaseType database, AbstractDatabase<T> data) {
+    public void register(DatabaseType database, Colleague<T> colleague) {
         assert database != null;
-        assert data != null;
-        this.dataMap.put(database, data);
+        assert colleague != null;
+        this.dataMap.put(database, colleague);
     }
 
-    public abstract void sync(DatabaseCommand<T> command);
+    public abstract void changed(DatabaseCommand<T> command);
 }

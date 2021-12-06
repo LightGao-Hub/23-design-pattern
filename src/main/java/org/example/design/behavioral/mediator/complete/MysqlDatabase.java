@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *  MYSQL实体类
+ *  MYSQL具体同事类
  *
  * Author: GL
  * Date: 2021-11-10
  */
-public class MysqlDatabase<T> extends AbstractDatabase<T> {
+public class MysqlDatabase<T> extends Colleague<T> {
 
     private final List<T> dataset = new ArrayList<>();
 
     public MysqlDatabase(AbstractMediator<T> mediator) {
         super(mediator);
-        mediator.register(DatabaseType.MYSQL, this);
+        super.getMediator().register(DatabaseType.MYSQL, this);
     }
 
     @Override
@@ -27,7 +27,7 @@ public class MysqlDatabase<T> extends AbstractDatabase<T> {
     @Override
     public void add(T data) {
         addData(data);
-        this.mediator.sync(DatabaseType.MYSQL, data); // 数据同步作业交给中介者管理
+        super.getMediator().changed(DatabaseType.MYSQL, data); // 数据同步作业交给中介者管理
     }
 
     public void select() {

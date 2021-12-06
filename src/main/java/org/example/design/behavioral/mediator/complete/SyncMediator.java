@@ -10,7 +10,7 @@ public class SyncMediator<T> extends AbstractMediator<T> {
 
     // 根据类型进行不同方式的同步
     @Override
-    public void sync(DatabaseType database, T data) {
+    public void changed(DatabaseType database, T data) {
         switch (database) {
             case MYSQL:
                 super.getDataMap().get(DatabaseType.REDIS).addData(data);

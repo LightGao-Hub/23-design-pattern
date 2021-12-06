@@ -4,16 +4,18 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
+ *  ES具体同事类
+ *
  * Author: GL
  * Date: 2021-11-10
  */
-public class EsDatabase<T> extends AbstractDatabase<T> {
+public class EsDatabase<T> extends Colleague<T> {
 
     private final List<T> dataset = new CopyOnWriteArrayList<>();
 
     public EsDatabase(AbstractMediator<T> mediator) {
         super(mediator);
-        mediator.register(DatabaseType.ES, this);
+        super.getMediator().register(DatabaseType.ES, this);
     }
 
     @Override
@@ -25,7 +27,7 @@ public class EsDatabase<T> extends AbstractDatabase<T> {
     @Override
     public void add(T data) {
         addData(data);
-        this.mediator.sync(DatabaseType.ES, data);    // 数据同步作业交给中介者管理
+        super.getMediator().changed(DatabaseType.ES, data);    // 数据同步作业交给中介者管理
     }
 
     public void count() {

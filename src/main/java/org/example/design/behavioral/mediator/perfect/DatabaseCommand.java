@@ -15,5 +15,5 @@ public abstract class DatabaseCommand<T> {
     @Setter
     protected T data;
 
-    public abstract void execute(Map<DatabaseType, AbstractDatabase<T>> dataMap);
+    public abstract void execute(Map<DatabaseType, Colleague<T>> dataMap);
 }

@@ -13,7 +13,7 @@ import java.util.Map;
 public class NewMysqlCommand<T> extends MysqlCommand<T> {
 
     @Override
-    public void execute(Map<DatabaseType, AbstractDatabase<T>> dataMap) {
+    public void execute(Map<DatabaseType, Colleague<T>> dataMap) {
         dataMap.get(DatabaseType.ES).addData(super.data);
     }
 

@@ -1,6 +1,5 @@
 package org.example.design.behavioral.mediator.usually;
 
-import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
@@ -12,13 +11,13 @@ import java.util.List;
  * Author: GL
  * Date: 2021-11-10
  */
-public class MysqlDatabase<T> extends AbstractDatabase<T> {
+public class MysqlDatabase<T> implements Database<T> {
 
     private final List<T> dataset = new ArrayList<>();
     @Setter
-    private AbstractDatabase<T> redisDatabase;
+    private Database<T> redisDatabase;
     @Setter
-    private AbstractDatabase<T> esDatabase;
+    private Database<T> esDatabase;
 
     @Override
     public void addData(T data) {

@@ -11,11 +11,11 @@ import java.util.List;
  * Author: GL
  * Date: 2021-11-10
  */
-public class EsDatabase<T> extends AbstractDatabase<T> {
+public class EsDatabase<T> implements Database<T> {
 
     private final List<T> dataset = new ArrayList<>();
     @Setter
-    private AbstractDatabase<T> mysqlDatabase;
+    private Database<T> mysqlDatabase;
 
     @Override
     public void addData(T data) {

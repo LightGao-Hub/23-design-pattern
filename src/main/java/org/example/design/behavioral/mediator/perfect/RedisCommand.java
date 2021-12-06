@@ -13,7 +13,7 @@ import java.util.Map;
 public class RedisCommand<T> extends DatabaseCommand<T> {
 
     @Override
-    public void execute(Map<DatabaseType, AbstractDatabase<T>> dataMap) {
+    public void execute(Map<DatabaseType, Colleague<T>> dataMap) {
         System.out.println("redis 无需同步");
     }
 }

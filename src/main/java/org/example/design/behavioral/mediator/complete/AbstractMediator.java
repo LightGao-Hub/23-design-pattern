@@ -11,16 +11,16 @@ import java.util.Map;
  * Author: GL
  * Date: 2021-11-10
  */
-public abstract class AbstractMediator<T> {
+public abstract class AbstractMediator<E> {
     // 存储数据库类型及值
     @Getter
-    protected final Map<DatabaseType, AbstractDatabase<T>> dataMap = new HashMap<>();
+    protected final Map<DatabaseType, Colleague<E>> dataMap = new HashMap<>();
 
-    public void register(DatabaseType database, AbstractDatabase<T> data) {
+    public void register(DatabaseType database, Colleague<E> colleague) {
         assert database != null;
-        assert data != null;
-        this.dataMap.put(database, data);
+        assert colleague != null;
+        this.dataMap.put(database, colleague);
     }
 
-    public abstract void sync(DatabaseType database, T data);
+    public abstract void changed(DatabaseType database, E data);
 }
