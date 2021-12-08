@@ -8,7 +8,7 @@
    
     每个package包中都有对每一个设计模式的详细介绍和本人的理解，同时每个package下都有针对此设计模式而单独运行的Test样例类，开箱即用！
             
-## 设计模式介绍(详细解释见代码注释)：
+## 设计模式介绍(详细解释见design包)：
 
     设计模式，即Design Patterns，是指在软件设计中，被反复使用的一种代码设计经验。使用设计模式的目的是为了可重用代码，提高代码的可扩展性和可维护性。
         
@@ -20,8 +20,8 @@
         
             创建型模式包括：
             
-            工厂方法：Factory Method
-            抽象工厂：Abstract Factory
+            工厂方法：Factory
+            抽象工厂：Abstract
             建造者：Builder
             原型：Prototype
             单例：Singleton
@@ -30,33 +30,32 @@
               
               结构型模式有：
               
-              适配器
-              桥接
-              组合
-              装饰器
-              外观
-              享元
-              代理
+              适配器: Adapter
+              桥接: Bridge
+              组合: Composite
+              装饰器: Decorator
+              外观: Facade
+              享元: Cache
+              代理: Proxy
               
             三、行为型模式主要涉及算法和对象间的职责分配。通过使用对象组合，行为型模式可以描述一组对象应该如何协作来完成一个整体任务。
               
               行为型模式有：
               
-              责任链
-              命令
-              监听器
-              解释器
-              迭代器
-              中介
-              备忘录
-              观察者
-              状态
-              策略
-              模板方法
-              访问者
+              责任链: Responsibility
+              命令: Command
+              监听器: Listener
+              迭代器: Iterator
+              中介: Mediator
+              备忘录: Memento
+              观察者: Observer
+              状态: State
+              策略: Strategy
+              模板方法: Template
+              访问者: Visitor
               
 
-## 设计模式六大原则介绍(详细解释见代码注释)：             
+## 设计模式六大原则介绍(详细解释见principle包)：             
             
             单一职责原则（类和方法，接口）
             开闭原则（扩展开放，修改关闭）

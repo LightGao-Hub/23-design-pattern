@@ -2,10 +2,10 @@ package org.example.design.behavioral.memento.simple;
 
 /**
  *
- *  此案例为备忘录模式的标准使用
+ *  此案例为备忘录模式的标准使用：符合单一职责设计原则！
  *
  *  结构：
- *           发起人接口[需要被备份的类]              负责人接口[存储备忘录]        备忘录[保存状态]
+ *           发起人接口[需要被备份的类]          负责人接口[负责存储和管理备忘录集合]  备忘录[保存状态]
  *        ┌───────────────────────────┐     ┌───────────────────────────┐   ┌───────────┐
  *        │ Originator                │     │ Caretaker                 │   │ Memento   │
  *        │  └createMemento()         │     │  └CopyOnWriteArrayList<>  │   │  └state<> │

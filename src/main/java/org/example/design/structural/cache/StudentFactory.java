@@ -1,8 +1,7 @@
-package org.example.design.structural.flyweight;
+package org.example.design.structural.cache;
 
 import com.sun.tools.javac.util.Assert;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 

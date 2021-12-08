@@ -1,4 +1,4 @@
-package org.example.design.structural.flyweight;
+package org.example.design.structural.cache;
 
 import lombok.Data;
 
