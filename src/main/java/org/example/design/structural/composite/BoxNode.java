@@ -20,14 +20,13 @@ public class BoxNode implements Node {
         this.price = price;
     }
 
-    // 语法糖
     public BoxNode(String name, double price, Node... node) {
         this.name = name;
         this.price = price;
         this.list.addAll(Arrays.asList(node));
     }
 
-    // 返回值为语法糖
+    // 返回值语法糖
     @Override
     public Node add(Node node) {
         this.list.add(node);
