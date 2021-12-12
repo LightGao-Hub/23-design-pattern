@@ -1,7 +1,7 @@
 package org.example.design.principle.four;
 
 /**
- *   接口隔离原则，详细请看：https:// app.yinxiang.com/fx/fcb5b15c-febd-4dca-b7e5-3d1ca300fd65
+ *   接口隔离原则，详细请看：https://app.yinxiang.com/fx/fcb5b15c-febd-4dca-b7e5-3d1ca300fd65
  *
  *   接口隔离原则（Interface Segregation Principle，ISP）要求程序员尽量将臃肿庞大的接口拆分成更小的和更具体的接口，让接口中只包含客户感兴趣的方法。
  *      要为各个类建立它们需要的专用接口，而不要试图去建立一个很庞大的接口供所有依赖它的类去调用。
