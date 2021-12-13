@@ -2,6 +2,7 @@ package org.example.design.principle.two;
 
 /**
  *  里式替换原则，详细请看：https://app.yinxiang.com/fx/c3be1162-6aa3-4132-807f-9a20e4a52ec1
+ *                     或：https://app.yinxiang.com/fx/24be30bb-6ef6-4841-ba8e-84dbd228a999
  *
  *  里氏替换原则通俗的来讲就是：子类可以扩展父类的功能，但不能改变父类原有的功能。也就是说：子类继承父类时，除添加新的方法完成新增功能外，尽量不要重写父类的方法。
  *
@@ -13,40 +14,4 @@ package org.example.design.principle.two;
  * Date: 2021-12-08
  */
 public class Explain {
-    public static void main(String[] args) {
-        Bird bird1 = new Swallow();
-        Bird bird2 = new BrownKiwi();
-        bird1.setSpeed(120);
-        bird2.setSpeed(120);
-        System.out.println("如果飞行300公里：");
-        try {
-            System.out.println("燕子将飞行" + bird1.getFlyTime(300) + "小时.");
-            System.out.println("几维鸟将飞行" + bird2.getFlyTime(300) + "小时。");
-        } catch (Exception err) {
-            System.out.println("发生错误了!");
-        }
-    }
-}
-
-//鸟类
-class Bird {
-    double flySpeed;
-    public void setSpeed(double speed) {
-        flySpeed = speed;
-    }
-    public double getFlyTime(double distance) {
-        return distance / flySpeed;
-    }
-}
-
-//燕子类
-class Swallow extends Bird {
-}
-
-
-//几维鸟类
-class BrownKiwi extends Bird {
-    public void setSpeed(double speed) {
-        flySpeed = 0;
-    }
 }

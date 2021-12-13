@@ -65,7 +65,7 @@
             开闭原则（扩展开放，修改关闭）
     
 ### 项目结构
-![github](https://raw.githubusercontent.com/gl0726/-23-design-pattern/master/picture/struct.jpg "github")
+![github](https://raw.githubusercontent.com/gl0726/23-design-pattern/master/picture/struct.jpg "github")
     
             
 

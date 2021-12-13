@@ -68,7 +68,7 @@ class Apple {
 /**
  * 正例：人接口
  *
- *  People类是复杂的业务逻辑，属于高层模块，而Fruit是原子模块，属于低层模块。People依赖于抽象的Fruit接口，这就做到了：高层模块不应该依赖低层模块，两者都应该依赖于抽象（抽象类或接口）。
+ *  People和Fruit接口都是复杂的业务逻辑，属于高层模块，而Apple2属于低层模块。People依赖于抽象的Fruit接口，这就做到了：高层模块不应该依赖低层模块，两者都应该依赖于抽象（抽象类或接口）。
  *
  *  People和Fruit接口与各自的实现类没有关系，增加实现类不会影响接口，这就做到了：抽象（抽象类或接口）不应该依赖于细节（具体实现类）。
  *
@@ -76,11 +76,11 @@ class Apple {
  *
  */
 interface People {
-    void eat(Fruit fruit);//人都有吃的方法，不然都饿死了
+    void eat(Fruit fruit);//将吃的细节抽象，并且面向抽象类参数
 }
 //水果接口
 interface Fruit {
-    String getName();//水果都是有名字的
+    String getName();//将获取水果名的细节抽象
 }
 //具体Jim人类
 class Jim2 implements People {
