@@ -24,12 +24,6 @@ package org.example.design.principle.four;
  * Date: 2021-12-10
  */
 public class Explain {
-    public static void main(String[] args) {
-        StuScoreList.INSTANCE.insert();
-        StuScoreList.INSTANCE.countTotalScore();
-        StuScoreList.INSTANCE.printStuInfo();
-        StuScoreList.INSTANCE.delete();
-    }
 }
 
 // 输入模块接口

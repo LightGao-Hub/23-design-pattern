@@ -19,24 +19,6 @@ package org.example.design.principle.three;
  * Date: 2021-12-08
  */
 public class Explain {
-    public static void main(String[] args) {
-        wrong();
-        right();
-    }
-
-    public static void wrong() {
-        Jim jim = new Jim();
-        Apple apple = new Apple();
-        jim.eat(apple);
-    }
-
-    private static void right() {
-        People jim = new Jim2();
-        Fruit apple = new Apple2();
-        Fruit Banana = new Banana();// 这里同时符合了里氏替换原则
-        jim.eat(apple);
-        jim.eat(Banana);
-    }
 }
 
 /**
