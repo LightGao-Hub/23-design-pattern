@@ -13,13 +13,13 @@ public class LazySingleton {
     /**
      * 私有默认构造子
      */
-    private LazySingleton(){}
+    private LazySingleton() {}
 
     /**
      * 静态工厂方法，通过synchronized解决多线程问题，但又会影响效率
      */
-    public static synchronized LazySingleton getInstance(){
-        if(instance == null){
+    public static synchronized LazySingleton getInstance() {
+        if(instance == null) {
             instance = new LazySingleton();
         }
         return instance;

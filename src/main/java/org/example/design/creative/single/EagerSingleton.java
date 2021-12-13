@@ -14,13 +14,13 @@ public class EagerSingleton {
     /**
      * 私有默认构造子
      */
-    private EagerSingleton(){
+    private EagerSingleton() {
     }
 
     /**
      * 静态工厂方法
      */
-    public static EagerSingleton getInstance(){
+    public static EagerSingleton getInstance() {
         return instance;
     }
 }

@@ -53,13 +53,13 @@ public class Explain {
  * 等各种水果，都只需要增加自己的实现类就可以了。由于遵循依赖倒置原则，只依赖于抽象，而不依赖于细节，所以增加类无需修改其他类。
  */
 class Jim {
-    public void eat(Apple apple){
+    public void eat(Apple apple) {
         System.out.println("反例: Jim eat " + apple.getName());
     }
 }
 //具体苹果类
 class Apple {
-    public String getName(){
+    public String getName() {
         return "apple";
     }
 }
@@ -83,20 +83,20 @@ interface Fruit {
     String getName();//水果都是有名字的
 }
 //具体Jim人类
-class Jim2 implements People{
-    public void eat(Fruit fruit){
+class Jim2 implements People {
+    public void eat(Fruit fruit) {
         System.out.println("正例: Jim eat " + fruit.getName());
     }
 }
 //具体苹果类
-class Apple2 implements Fruit{
-    public String getName(){
+class Apple2 implements Fruit {
+    public String getName() {
         return "apple";
     }
 }
 //具体香蕉类
-class Banana implements Fruit{
-    public String getName(){
+class Banana implements Fruit {
+    public String getName() {
         return "banana";
     }
 }

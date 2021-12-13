@@ -96,7 +96,7 @@ class B2 {
         return new C2(name);
     }
 
-    public void work(){
+    public void work() {
         C2 c = getC("王五");
         c.work();
     }
