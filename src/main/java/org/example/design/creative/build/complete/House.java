@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
  * Author: GL
  * Date: 2021-12-02
  */
-@NoArgsConstructor
 @Data
 public class House {
 

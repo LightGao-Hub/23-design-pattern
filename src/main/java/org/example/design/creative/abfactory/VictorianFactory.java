@@ -6,7 +6,7 @@ package org.example.design.creative.abfactory;
  * Author: GL
  * Date: 2021-11-29
  */
-public enum  VictorianFactory implements AbstractFactory {
+public enum VictorianFactory implements AbstractFactory {
 
     INSTANCE;
 

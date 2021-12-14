@@ -1,7 +1,9 @@
 package org.example.design.creative.build.simple;
 
+import org.junit.Test;
+
 /**
- *  此案例为简化版建造者模式，采用@Builder的实现方式
+ *  此案例为简化版建造者模式，实现了@Builder的实现方式
  *
  *  结构：
  *      ┌────────────────────────────────────────────────┐
@@ -20,9 +22,10 @@ package org.example.design.creative.build.simple;
  * Author: GL
  * Date: 2021-12-02
  */
-public class Test {
+public class BuildTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         build1();
         build2();
     }

@@ -1,7 +1,7 @@
 package org.example.design.creative.build.simple;
 
-
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @Builder注解实现原理
@@ -10,6 +10,7 @@ import lombok.Getter;
  * Date: 2021-12-02
  */
 @Getter
+@Setter
 public class HouseDemo {
     // 必选
     private int windows;
@@ -51,6 +52,7 @@ public class HouseDemo {
         HouseDemoBuilder(){
         }
 
+        // 核心代码
         public HouseDemo build() {
             return new HouseDemo(this.windows, this.doors, this.rooms, this.hasGarage, this.hasSwimPool, this.hasGarden);
         }

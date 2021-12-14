@@ -1,5 +1,7 @@
 package org.example.design.creative.build.complete;
 
+import org.junit.Test;
+
 /**
  *  本案例是传统上建造者模式，实际开发中使用的较少，通常会使用@Builder注解来实现
  *
@@ -34,15 +36,16 @@ package org.example.design.creative.build.complete;
  * Author: GL
  * Date: 2021-12-02
  */
-public class Test {
+public class BuildTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         build();
         directorBuild();
     }
 
     // 非指导者构建
-    public static void build() {
+    public void build() {
         new GarageHouseBuilder().windows(1)
                 .doors(1)
                 .rooms(1)
@@ -74,7 +77,7 @@ public class Test {
     }
 
     // 指导者构建
-    public static void directorBuild() {
+    public void directorBuild() {
         HouseDirector.makeGarageHouseBuilder().print();
         HouseDirector.makeSwimPoolHouseBuilder().print();
         HouseDirector.makeGardenHouseBuilder().print();

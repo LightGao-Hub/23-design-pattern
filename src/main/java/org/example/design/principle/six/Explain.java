@@ -23,13 +23,6 @@ package org.example.design.principle.six;
  * Date: 2021-12-13
  */
 public class Explain {
-    public static void main(String[] args) {
-        People jim = new Jim();
-        Fruit apple = new Apple();
-        Fruit Banana = new Banana();
-        jim.eat(apple);
-        jim.eat(Banana);
-    }
 }
 
 interface People {

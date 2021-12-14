@@ -6,7 +6,7 @@ import org.junit.Test;
  * Author: GL
  * Date: 2021-12-13
  */
-public class TestFour {
+public class FourTest {
     @Test
     public void test() {
         StuScoreList.INSTANCE.insert();

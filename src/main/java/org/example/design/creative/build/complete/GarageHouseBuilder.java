@@ -26,7 +26,6 @@ public class GarageHouseBuilder extends HouseBuilder {
         return this;
     }
 
-    // 此处不可写死为true，假设此处的hasGarage变量不是boolean类型而是车库面积int类型，所以此处仍需要传参
     @Override
     public HouseBuilder hasGarage(boolean hasGarage) {
         super.getHouse().setHasGarage(hasGarage);

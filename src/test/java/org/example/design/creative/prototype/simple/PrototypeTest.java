@@ -1,5 +1,6 @@
 package org.example.design.creative.prototype.simple;
 
+import org.junit.Test;
 
 /**
  *  此案例通过Object - clone函数实现克隆[此方式最为简单]，需要注意的是被克隆类需要实现Cloneable接口，否则会抛出CloneNotSupportedException异常。
@@ -9,8 +10,9 @@ package org.example.design.creative.prototype.simple;
  * Author: GL
  * Date: 2021-12-06
  */
-public class Test {
-    public static void main(String[] args) {
+public class PrototypeTest {
+    @Test
+    public void test() {
         final Prototype prototype = new Prototype(1, "prototype");
         final Prototype clone = prototype.clone();
         System.out.println(prototype);

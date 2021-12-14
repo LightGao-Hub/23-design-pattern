@@ -12,12 +12,12 @@ public abstract class HouseBuilder {
     private final House house = new House();
 
     // 可选参数函数
-    public abstract HouseBuilder windows(int windows);
-    public abstract HouseBuilder doors(int doors);
-    public abstract HouseBuilder rooms(int rooms);
-    public abstract HouseBuilder hasGarage(boolean hasGarage);
-    public abstract HouseBuilder hasSwimPool(boolean hasSwimPool);
-    public abstract HouseBuilder hasGarden(boolean hasGarden);
+    protected abstract HouseBuilder windows(int windows);
+    protected abstract HouseBuilder doors(int doors);
+    protected abstract HouseBuilder rooms(int rooms);
+    protected abstract HouseBuilder hasGarage(boolean hasGarage);
+    protected abstract HouseBuilder hasSwimPool(boolean hasSwimPool);
+    protected abstract HouseBuilder hasGarden(boolean hasGarden);
 
     // 返回函数
     public House getHouse() {

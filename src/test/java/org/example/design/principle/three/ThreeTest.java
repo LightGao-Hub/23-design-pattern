@@ -6,7 +6,7 @@ import org.junit.Test;
  * Author: GL
  * Date: 2021-12-13
  */
-public class TestThree {
+public class ThreeTest {
     @Test
     public void test() {
         wrong();

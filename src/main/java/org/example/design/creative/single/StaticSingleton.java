@@ -26,8 +26,4 @@ public class StaticSingleton {
     public static StaticSingleton getInstance() {
         return SingletonHolder.instance;
     }
-
-    public static void main(String[] args) {
-        StaticSingleton.getInstance();
-    }
 }

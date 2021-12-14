@@ -8,7 +8,6 @@ package org.example.design.creative.build.complete;
  * Date: 2021-12-03
  */
 public enum HouseDirector {
-
     ;
 
     public static House makeGarageHouseBuilder() {

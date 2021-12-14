@@ -26,7 +26,6 @@ public class SwimPoolHouseBuilder extends HouseBuilder {
         return this;
     }
 
-    // 此处不可写死为true，假设此处的hasSwimPool变量不是boolean类型而是泳池面积int类型，所以此处仍需要传参
     @Override
     public HouseBuilder hasSwimPool(boolean hasSwimPool) {
         super.getHouse().setHasSwimPool(hasSwimPool);

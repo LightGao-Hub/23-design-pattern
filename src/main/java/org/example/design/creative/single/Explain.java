@@ -5,18 +5,18 @@ package org.example.design.creative.single;
  *
  *  常见设计方式：
  *      1、饿汉式：不推荐
- *          -特点：安全，高效，非懒加载，可以通过反射破坏 -> 这里说的非懒加载原因是：虽然变量是static修饰的成员变量，但并不保障一定是懒加载，因为此类加载的方式有很多可能，
- *                  假设此类有其他静态变量或函数被调用，那么就会加载到instance变量，从而变成了非懒加载单例
+ *          -特点：安全，高效，非懒加载，可以通过反射破坏 -> 这里说的非懒加载原因是：虽然变量是static修饰的成员变量，但并不保障一定是懒加载，因为此类的加载的方式有很多可能，
+ *                  假设此类有其他静态变量或函数被调用，那么就会加载到instance变量，从而变成了非懒加载单例模式
  *
  *          饿汉式是典型的空间换时间，当类装载的时候就会创建类的实例，不管你用不用，先创建出来，然后每次调用的时候，就不需要再判断，节省了运行时间。
  *          由于使用了static关键字，保证了在引用这个变量时只执行一次，所以保证了JVM层面的线程安全
- *          -参考：LazySingleton类
+ *          -参考：EagerSingleton类
  *
  *      2、懒汉式：不推荐
  *          -特点：不安全，不高效，懒加载，可以通过反射破坏
  *          懒汉式是典型的时间换空间,就是每次获取实例都会进行判断，看是否需要创建实例，浪费判断的时间。当然，如果一直没有人使用的话，那就不会创建实例，则节约内存空间
- *          由于懒汉式的实现是线程安全的，这样会降低整个访问的速度，而且每次都要判断。那么有没有更好的方式实现呢？
- *          -参考：EagerSingleton类
+ *          由于懒汉式的实现是线程安全的，这样会降低整个访问的速度，而且每次都要判断，浪费时间。
+ *          -参考：LazySingleton类
  *
  *      3、双重检查加锁：此方式并不推荐，因为需要强制指定JVM指令顺序，所以没有特别的需要，不建议使用。
  *
@@ -45,13 +45,6 @@ package org.example.design.creative.single;
  * Author: GL
  * Date: 2021-11-24
  */
-public class Test {
-    public static void main(String[] args) {
-        final Singleton uniqueInstance = Singleton.INSTANCE;
-        final Singleton uniqueInstance2 = Singleton.INSTANCE;
-        uniqueInstance.singletonOperation();
-        uniqueInstance2.singletonOperation();
-        System.out.println(uniqueInstance == uniqueInstance2);
-    }
+public class Explain {
 }
 
