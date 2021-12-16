@@ -1,6 +1,5 @@
 package org.example.design.structural.cache;
 
-import com.sun.tools.javac.util.Assert;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -15,8 +14,6 @@ public class StudentFactory {
     private static final Map<Integer, Student> cache = new ConcurrentHashMap<>();
 
     public static Student create(int id, String name) {
-        Assert.check(id >= 0);
-        Assert.check(name != null);
         Student std = cache.getOrDefault(id, null);
         // 缓存中存在:
         if (std == null) {
