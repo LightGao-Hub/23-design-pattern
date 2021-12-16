@@ -1,5 +1,9 @@
 package org.example.design.structural.decorator;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -17,28 +21,22 @@ import java.util.zip.InflaterInputStream;
  * Date: 2021-10-30
  */
 public class CompressionDecorator extends DataSourceDecorator {
+    @Getter
+    @Setter
     private int compLevel = 6;
 
     public CompressionDecorator(DataSource source) {
         super(source);
     }
 
-    public int getCompressionLevel() {
-        return compLevel;
-    }
-
-    public void setCompressionLevel(int value) {
-        compLevel = value;
-    }
-
     @Override
     public void writeData(String data) {
-        super.writeData(compress(data));
+        super.getWrapper().writeData(compress(data));
     }
 
     @Override
     public String readData() {
-        return decompress(super.readData());
+        return decompress(super.getWrapper().readData());
     }
 
     private String compress(String stringData) {

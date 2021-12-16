@@ -1,8 +1,4 @@
-package org.example.design.structural.bridge.car;
-
-import org.example.design.structural.bridge.Vehicle;
-import org.example.design.structural.bridge.brand.Brand;
-import org.example.design.structural.bridge.engine.Engine;
+package org.example.design.structural.bridge;
 
 /**
  * Author: GL

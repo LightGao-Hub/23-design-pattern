@@ -1,7 +1,4 @@
-package org.example.design.structural.bridge.car;
-
-import org.example.design.structural.bridge.brand.Brand;
-import org.example.design.structural.bridge.engine.Engine;
+package org.example.design.structural.bridge;
 
 /**
  *  跑车实现类

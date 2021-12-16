@@ -1,21 +1,13 @@
 package org.example.design.structural.bridge;
 
-import org.example.design.structural.bridge.brand.Benz;
-import org.example.design.structural.bridge.brand.Bmw;
-import org.example.design.structural.bridge.car.Car;
-import org.example.design.structural.bridge.car.SportsCar;
-import org.example.design.structural.bridge.car.Suv;
-import org.example.design.structural.bridge.engine.HybridEngine;
-import org.example.design.structural.bridge.engine.OilEngine;
-
 /**
- *  桥接模式是一种结构型设计模式， 可将一个大类或一系列紧密相关的类拆分为多个抽象和实现的层次结构， 从而能在开发时分别使用。
+ *  桥接模式是一种结构型设计模式，可将一个大类或一系列紧密相关的类拆分为多个抽象和实现的层次结构，从而能在开发时分别使用。
  *
  *   理解：
- *      其实桥接模式在我们开发中用的很多，尤其是后端的三层架构中(MVC), 比如我们经常使用的service业务层中会设置不同表的dao层接口为成员变量，
+ *      其实桥接模式在我们开发中用的很多，尤其是javaEE中的三层架构(MVC), 比如我们经常使用的service业务层中会设置不同表的dao层接口为成员变量，
  *          service只调用dao层接口的抽象函数，并不需要知道是哪个实现类，由此将service层和dao层的接口区别开！
- *      而且只是通过成员变量的引用为桥梁来连接service层和dao层，同时也不影响service层和dao层的各自下游的实现类，只是通过引用为桥梁连接两片世界(service层世界)和(dao层世界)。
- *          十分友好：因为不影响各自世界的扩展和实现，只是通过引用桥梁沟通，举例如下：
+ *      而且只是通过成员变量的引用为桥梁来连接service层和dao层，同时也不影响service层和dao层各自下游的实现类，只是通过引用连接两片世界(service层世界)和(dao层世界)。
+ *          十分友好：因为不影响各自世界的扩展和实现，只是通过引用桥梁沟通，故叫做桥梁模式；同时符合开闭原则。
  *
  *  假设某个汽车厂商生产的汽车有两种类型：SUV和SportsCar，每种类型的车又可以选择不同的引擎(engine)：燃油(Oil)和混合动力(Hybrid)。 和不同的品牌(brand):Bmw 和 Benz;
  *
@@ -56,15 +48,13 @@ import org.example.design.structural.bridge.engine.OilEngine;
  *     ├─│  Bmw         │       │                 │              ├─│ HybridEngine │
  *     │ └──────────────┘   ┌──────────┐      ┌───────┐          │ └──────────────┘
  *     │ ┌──────────────┐   │SportsCar │      │  Suv  │          │ ┌──────────────┐
- *     ├─│  Benz        │   └──────────┘      └───────┘          ├─│  OilEngine   │
+ *     └─│  Benz        │   └──────────┘      └───────┘          └─│  OilEngine   │
  *       └──────────────┘                                          └──────────────┘
- *
- *  实现见代码
  *
  * Author: GL
  * Date: 2021-10-28
  */
-public class Explain {
+public class BridgeTest {
 
     public static void main(String[] args) {
         // 构建奔驰SUV混合动力

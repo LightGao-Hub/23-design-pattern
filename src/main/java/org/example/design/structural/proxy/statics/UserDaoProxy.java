@@ -15,14 +15,14 @@ public class UserDaoProxy implements UserDao {
 
     @Override
     public void save(String name) {
-        System.out.println("开启事务");//扩展了额外功能
+        System.out.println("开启事务");//额外扩展了功能
         dao.save(name);
         System.out.println("提交事务");
     }
 
     @Override
     public void update() {
-        System.out.println("开启事务");//扩展了额外功能
+        System.out.println("开启事务");//额外扩展了额外功能
         dao.update();
         System.out.println("提交事务");
     }

@@ -15,15 +15,15 @@ public class ProxyFactoryLog {
     }
 
     // 为目标对象生成内存中的代理对象
-    public Object getProxyInstance() {
-        return Proxy.newProxyInstance(userdao.getClass().getClassLoader(), userdao.getClass().getInterfaces(),
+    public UserDao getProxyInstance() {
+        return (UserDao) Proxy.newProxyInstance(userdao.getClass().getClassLoader(), userdao.getClass().getInterfaces(),
                 (proxy, method, args) -> {
-                    System.out.println("开始执行函数");
+                    System.out.println("日志：开始执行函数");
 
                     // 执行目标对象方法, 可以获取返回值，不过此demo没有使用
                     Object returnValue = method.invoke(userdao, args);
 
-                    System.out.println("函数执行结束");
+                    System.out.println("日志：函数执行结束");
                     return null;
                 });
     }

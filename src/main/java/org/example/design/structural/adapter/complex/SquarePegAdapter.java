@@ -15,7 +15,7 @@ public class SquarePegAdapter extends RoundPeg {
     @Override
     public double getRadius() {
         double result;
-        // Calculate a minimum circle radius, which can fit this peg.
+        // 计算可以适合此钉的最小圆半径。
         result = (Math.sqrt(Math.pow((peg.getWidth() / 2), 2) * 2));
         return result;
     }

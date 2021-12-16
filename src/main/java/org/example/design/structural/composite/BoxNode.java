@@ -12,16 +12,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class BoxNode implements Node {
     // 盒子价格
     private final double price;
-    private final String name;
     private final List<Node> list = new CopyOnWriteArrayList<>();
 
-    public BoxNode(String name, double price) {
-        this.name = name;
-        this.price = price;
-    }
-
-    public BoxNode(String name, double price, Node... node) {
-        this.name = name;
+    public BoxNode(double price, Node... node) {
         this.price = price;
         this.list.addAll(Arrays.asList(node));
     }

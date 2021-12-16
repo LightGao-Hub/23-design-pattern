@@ -1,22 +1,20 @@
 package org.example.design.structural.adapter.simple;
 
+import org.junit.Test;
+
 import java.util.concurrent.Callable;
 
 /**
  *  此为适配器模式：
  *      适配器模式是Adapter，是指如果一个接口需要B接口，但是待传入的对象却是A接口，怎么办？
  *
- *      思路：你最终想通过哪个函数(B)？就去创建符合该函数需要的接口的实现类(此类为适配器)，并从类的构造器中传入需要通过的类(A)，在适配器内部进行转换即可！
- *
  *      如下例子：
  *
  *          因为Thread接收Runnable接口(这是我们想通过的)，但不接收Callable接口，所以此时如果直接放入callable会报错，怎么办？
  *
- *          一个办法是改写Task类，把实现的Callable改为Runnable，但这样做不好，因为Task很可能在其他地方作为Callable被引用，
+ *          一个办法是改写ThreadDemo类，把实现的Callable改为Runnable，但这样做不好，因为ThreadDemo很可能在其他地方作为Callable被引用，那么就需要用到了适配器模式。
  *
- *          一旦改写Task的接口，会导致其他正常工作的代码无法编译，那么就需要用到了适配器模式。
- *
- *          另一个办法不用改写Task类，而是用一个Adapter，把这个Callable接口“变成”Runnable接口，这样，就可以正常编译
+ *          不用改写ThreadDemo类，而是使用一个Adapter，把这个Callable接口“变成”Runnable接口，这样，就可以正常编译
  *
  *          因为Thread接收Runnable接口是我们想通过的，所以我们的适配器首先要实现Runnable接口，并将需要适配的ThreadDemo作为适配器的构造参数，由此再在run函数中调用ThreadDemo的call即可！
  *
@@ -30,8 +28,9 @@ import java.util.concurrent.Callable;
  * Author: GL
  * Date: 2021-10-28
  */
-public class Test {
-    public static void main(String[] args) {
+public class SimpleTest {
+    @Test
+    public void test() {
         Callable<Long> callable = new ThreadDemo(123456);
         Thread thread = new Thread(new RunnableAdapter(callable));
         thread.start();

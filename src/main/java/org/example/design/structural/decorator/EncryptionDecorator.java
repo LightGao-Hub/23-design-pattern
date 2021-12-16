@@ -17,12 +17,12 @@ public class EncryptionDecorator extends DataSourceDecorator {
 
     @Override
     public void writeData(String data) {
-        super.writeData(encode(data));
+        super.getWrapper().writeData(encode(data));
     }
 
     @Override
     public String readData() {
-        return decode(super.readData());
+        return decode(super.getWrapper().readData());
     }
 
     private String encode(String data) {

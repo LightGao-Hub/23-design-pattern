@@ -1,4 +1,4 @@
-package org.example.design.structural.bridge.engine;
+package org.example.design.structural.bridge;
 
 /**
  *  抽象引擎接口

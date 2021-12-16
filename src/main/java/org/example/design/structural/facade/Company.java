@@ -7,5 +7,4 @@ package org.example.design.structural.facade;
  * Date: 2021-10-30
  */
 public interface Company {
-
 }

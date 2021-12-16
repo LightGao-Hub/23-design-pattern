@@ -1,6 +1,7 @@
-package org.example.design.structural.bridge.brand;
+package org.example.design.structural.bridge;
 
 /**
+ *  奔驰品牌类
  * Author: GL
  * Date: 2021-10-28
  */

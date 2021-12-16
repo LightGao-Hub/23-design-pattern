@@ -1,5 +1,8 @@
 package org.example.design.structural.cache;
 
+import org.junit.Before;
+import org.junit.Test;
+
 import java.util.Random;
 
 /**
@@ -16,41 +19,38 @@ import java.util.Random;
  *
  *  在实际应用中，享元模式主要应用于缓存，即客户端如果重复请求某些对象，不必每次查询数据库或者读取文件，而是直接返回内存中缓存的数据。
  *
- *  如下举例通过工厂方式创建100名学生后没过一个学期老师随机抽选部分学生进行考试，此时获取的便是享元模式下的数据。
+ *  如下举例通过工厂方式创建100名学生后每过一个学期老师随机抽选部分学生进行考试，此时获取的便是享元模式下的数据。
  *
  * Author: GL
  * Date: 2021-10-31
  */
-public class Test {
+public class CacheTest {
 
-    public static void main(String[] args) {
-        Random rand = new Random();
+    Random rand = new Random();
 
-        // 创建100名学生
+    @Before
+    public void before() {
+        // 初始化100名同学
         for (int i = 1; i <= 100; ++i) {
             StudentFactory.create(i, String.valueOf((char) i));
         }
+    }
 
+    @Test
+    public void test() {
         // 第一学期：老师随机挑选10个学生参加考试
+        exam();
+        // 第二学期：老师随机挑选10个学生参加考试
+        exam();
+        // 第三学期：老师随机挑选10个学生参加考试
+        exam();
+    }
+
+    public void exam() {
+        System.out.println("---------------------");
         for (int i = 1; i <= 10; ++i) {
-            final Student student = StudentFactory.create(rand.nextInt(100),
-                    String.valueOf((char) rand.nextInt(100)));
+            StudentFactory.create(rand.nextInt(100), String.valueOf((char) rand.nextInt(100)));
         }
-
         System.out.println("---------------------");
-
-        // 第二学期：老师随机挑选20个学生参加考试
-        for (int i = 1; i <= 20; ++i) {
-            final Student student = StudentFactory.create(rand.nextInt(100),
-                    String.valueOf((char) rand.nextInt(100)));
-        }
-
-        System.out.println("---------------------");
-
-        // 第三学期：老师随机挑选50个学生参加考试
-        for (int i = 1; i <= 50; ++i) {
-            final Student student = StudentFactory.create(rand.nextInt(100),
-                    String.valueOf((char) rand.nextInt(100)));
-        }
     }
 }

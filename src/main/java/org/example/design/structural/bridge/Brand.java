@@ -1,4 +1,4 @@
-package org.example.design.structural.bridge.brand;
+package org.example.design.structural.bridge;
 
 /**
  *  抽象品牌接口

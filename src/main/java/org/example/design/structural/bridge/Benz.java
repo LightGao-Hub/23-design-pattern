@@ -1,4 +1,4 @@
-package org.example.design.structural.bridge.brand;
+package org.example.design.structural.bridge;
 
 /**
  *  奔驰品牌实现类

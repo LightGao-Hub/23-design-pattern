@@ -1,13 +1,13 @@
 package org.example.design.structural.decorator;
 
 /**
- * 装饰器是一种结构设计模式， 允许你通过将对象放入特殊封装对象中来为原对象增加新的行为。
+ * 装饰器是一种结构设计模式，允许你通过将对象放入特殊封装对象中来为原对象增加新的行为。
  *
  *   在java的IO流中我们就曾使用过装饰器模式，例如：
  *
  *   InputStream input = new GZIPInputStream( // 第二层装饰
- *                      new BufferedInputStream( // 第一层装饰
- *                          new FileInputStream("test.gz") // 核心功能));
+ *                          new BufferedInputStream( // 第一层装饰
+ *                              new FileInputStream("test.gz") // 核心功能));
  *
  *   根据IO流的例子，我们将装饰器的结构一般设置如下：
  *                   ┌─────────────┐
@@ -46,7 +46,7 @@ package org.example.design.structural.decorator;
  *      2、装饰和代理有着极其相似的结构， 都是通过构造函数将真是业务类存储为变量，并通过实现共同接口的重写来增强真实业务的函数，
  *      但是其意图却非常不同。这块可以看代理模式下的代码注释，简洁来说：
  *      在代理模式中，用户拿到的就是一个代理类userDaoProxy，对于里面的UserDao的实现类是完全黑盒，也完全不需要知道，只需要使用代理类的增强函数即可
- *      而装饰器模式则不同，装饰器模式是将内部UserDao的实现类给与用户，让用户自己使用增强的装饰器进行嵌套并自我组合使用！
+ *      而装饰器模式则不同，装饰器模式是将内部UserDao的实现类给予用户，让用户自己使用增强的装饰器进行嵌套并自我组合使用！
  *      所以装饰器模式下真实业务的生命周期由用户决定，而代理模式中真实业务的生命周期由代理类决定！
  * <p>
  *      3、为什么装饰模式中装饰者父类也要继承真实业务的接口呢？这一点我觉得相当于:给人穿了件衣服[装饰]后的新对象毕竟本质还是人，只是多了件衣服。
@@ -55,11 +55,11 @@ package org.example.design.structural.decorator;
  * Author: GL
  * Date: 2021-10-29
  */
-public class Test {
+public class DecoratorTest {
 
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) {
         // 获取当前项目路径
-        String localPath = Class.forName("org.example.design.structural.decorator.Test").getResource("").getPath();
+        String localPath = DecoratorTest.class.getResource("").getPath();
 
         // 要写入的原始字符串
         String salaryRecords = "Name,Salary\nJohn Smith,100000\nSteven Jobs,912000";

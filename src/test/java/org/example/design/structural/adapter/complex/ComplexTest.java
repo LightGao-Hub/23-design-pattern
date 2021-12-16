@@ -1,5 +1,7 @@
 package org.example.design.structural.adapter.complex;
 
+import org.junit.Test;
+
 /**
  *  此为适配器模式：
  *      适配器模式是Adapter，是指如果一个接口需要B接口，但是待传入的对象却是A接口，怎么办？
@@ -20,8 +22,9 @@ package org.example.design.structural.adapter.complex;
  * Author: GL
  * Date: 2021-10-28
  */
-public class Test {
-    public static void main(String[] args) {
+public class ComplexTest {
+    @Test
+    public void test() {
         // 圆适合圆，不足为奇。
         RoundHole hole = new RoundHole(5);
         RoundPeg rpeg = new RoundPeg(5);
