@@ -3,7 +3,7 @@ package org.example.design.behavioral.responsibility.separate;
 import java.util.Map;
 
 /**
- *  公司财务实现的基于优先级责任链实体类
+ *  公司财务实现的基于优先级责任链实现类
  *
  * Author: GL
  * Date: 2021-10-31

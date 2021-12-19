@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- *  prime用户折扣策略实体类
+ *  prime用户折扣策略实现类
  *
  * Author: GL
  * Date: 2021-11-22

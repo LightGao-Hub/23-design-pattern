@@ -5,9 +5,7 @@ package org.example.design.other.callback.synchronization;
  * Author: GL
  * Date: 2021-10-25
  */
-public class MessageClient implements Client<String> {
-
-    private final MessageServer server;
+public class MessageClient extends Client<String> implements MessageCallBack<String> {
 
     @Override
     public void onSuccess(String result) {
@@ -21,11 +19,11 @@ public class MessageClient implements Client<String> {
 
     // 回调的核心就是回调方将本身即this传递给调用方
     public void sendMessage(String message) {
-        System.out.println("开始调用服务端进行消息的推送");
-        server.send(message, this);
+        System.out.println("客户端发送请求");
+        super.getServer().receive(message, this);
     }
 
     public MessageClient(MessageServer server) {
-        this.server = server;
+        super(server);
     }
 }

@@ -35,7 +35,7 @@ import java.math.BigDecimal;
  *                              │                                                                        ▲
  *     ┌────────────────────────┼───────────────┐                                                        │
  * ┌──────────────────────┐        ┌──────────────────────┐                               ┌──────────────────────────────────┐
- * │ManagerFinanceHandler │        │DirectorFinanceHandler│                               │FinancePriorityResponsibilityChain│-公司财务实现的基于优先级责任链实体类
+ * │ManagerFinanceHandler │        │DirectorFinanceHandler│                               │FinancePriorityResponsibilityChain│-公司财务实现的基于优先级责任链实现类
  * └──────────────────────┘        └──────────────────────┘                               └──────────────────────────────────┘
  *
  *

@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- *  普通用户折扣策略实体类
+ *  普通用户折扣策略实现类
  *
  * Author: GL
  * Date: 2021-11-22

@@ -5,7 +5,7 @@ import org.example.design.behavioral.mediator.complete.DatabaseType;
 import java.util.Map;
 
 /**
- *  es命令实体类: 负责执行
+ *  es命令实现类: 负责执行
  *
  * Author: GL
  * Date: 2021-11-11

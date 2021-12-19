@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
- *  商场上下文实体类
+ *  商场上下文实现类
  *
  * Author: GL
  * Date: 2021-11-22

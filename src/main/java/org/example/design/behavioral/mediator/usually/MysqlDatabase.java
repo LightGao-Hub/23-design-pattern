@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * mysql数据库实体类
+ * mysql数据库实现类
  *
  * Author: GL
  * Date: 2021-11-10

@@ -1,28 +1,24 @@
-package org.example.design.other.callback.asynchronous.utils;
+package org.example.design.other.callback.asynchronous;
 
 import com.google.common.util.concurrent.FutureCallback;
 
 /**
- *  测试线程池工具类，十秒后超时结束
+ *  测试线程池及线程池超时功能，十秒后超时异常处理后结束
  * Author: GL
  * Date: 2021-10-25
  */
-public class Test {
-    public static void main(String[] args) {
-
-        AsynchronousCallbackUtil<String> asynchronousCallbackUtil = AsynchronousFactory.create(5, 10);
-
-        asynchronousCallbackUtil.addCallable(new DemoCallable(), new FutureCallback<String>() {
+public class DemoTest {
+    public static void main(String[] a) {
+        CallbackThreadPoolFactory.CallbackThreadPool callbackThreadPool = CallbackThreadPoolFactory.create(5, 10);
+        callbackThreadPool.addCallable(new DemoCallableThreadPool(), new FutureCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 System.out.println(" onSuccess result = " + result);
             }
-
             @Override
             public void onFailure(Throwable t) {
                 System.out.println(" onFailure Throwable t.getMessage() = " + t.getMessage());
             }
         });
-
     }
 }

@@ -1,4 +1,4 @@
-package org.example.design.other.callback.asynchronous.utils;
+package org.example.design.other.callback.asynchronous;
 
 import java.util.Calendar;
 import java.util.concurrent.Callable;
@@ -7,7 +7,7 @@ import java.util.concurrent.Callable;
  * Author: GL
  * Date: 2021-10-25
  */
-public class DemoCallable implements Callable<String> {
+public class DemoCallableThreadPool implements Callable<String> {
 
     @Override
     public String call() throws Exception {

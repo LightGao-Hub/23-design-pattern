@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *  REDIS实体类
+ *  REDIS实现类
  *
  * Author: GL
  * Date: 2021-11-10

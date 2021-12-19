@@ -8,7 +8,7 @@ package org.example.design.behavioral.mediator.complete;
  *                           │Database<T> │
  *                           └────────────┘
  *                                  ▲
- *                                  │  同事抽象父类继承数据库[引用中介类]               中介抽象父类[保存各个类型的实体类]                     数据库枚举类型
+ *                                  │  同事抽象父类继承数据库[引用中介类]               中介抽象父类[保存各个类型的实现类]                     数据库枚举类型
  *                         ┌─────────────────┐
  *                         │Colleague<T>     │                              ┌────────────────────────────────────────────┐
  *                         │ └mediator       │----------------------------->│ AbstractMediator<E>                        │      ┌───────────────┐
@@ -18,7 +18,7 @@ package org.example.design.behavioral.mediator.complete;
  * ┌──────────────┐           ┌─────────────┐           ┌──────────┐                        │                                   │   └ES         │
  * │MysqlDatabase │           │RedisDatabase│           │EsDatabase│                 ┌────────────────┐                         └───────────────┘
  * │  └dataset    │           │  └dataset   │           │  └dataset│                 │SyncMediator    │
- * └──────────────┘           └─────────────┘           └──────────┘                 │  └changed(){}  │-changed()函数处理各个实体类之间的协调
+ * └──────────────┘           └─────────────┘           └──────────┘                 │  └changed(){}  │-changed()函数处理各个实现类之间的协调
  *                                                                                   └────────────────┘
  *
  *  总结：
@@ -34,7 +34,7 @@ package org.example.design.behavioral.mediator.complete;
 public class Test {
     public static void main(String[] args) {
 
-        // 新建中介实体类后存入各个业务实体类中，再由实体类反注册进中介实体类中
+        // 新建中介实现类后存入各个业务实现类中，再由实现类反注册进中介实现类中
         AbstractMediator<String> syncMediator = new SyncMediator<>();
 
         MysqlDatabase<String> mysqlDatabase = new MysqlDatabase<>(syncMediator);

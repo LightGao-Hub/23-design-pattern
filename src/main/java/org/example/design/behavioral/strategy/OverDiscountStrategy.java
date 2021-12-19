@@ -3,7 +3,7 @@ package org.example.design.behavioral.strategy;
 import java.math.BigDecimal;
 
 /**
- *  满减策略实体类
+ *  满减策略实现类
  *
  * Author: GL
  * Date: 2021-11-22
