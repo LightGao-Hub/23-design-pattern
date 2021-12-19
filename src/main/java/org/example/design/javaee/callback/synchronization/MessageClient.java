@@ -1,4 +1,4 @@
-package org.example.design.other.callback.synchronization;
+package org.example.design.javaee.callback.synchronization;
 
 /**
  *  这里实现泛型接口，设置发送消息类型和回调返回值类型!

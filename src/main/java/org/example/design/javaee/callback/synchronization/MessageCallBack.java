@@ -1,4 +1,4 @@
-package org.example.design.other.callback.synchronization;
+package org.example.design.javaee.callback.synchronization;
 
 /**
  *  回调函数接口, 使用泛型可以让多个实现类自己选择类型！

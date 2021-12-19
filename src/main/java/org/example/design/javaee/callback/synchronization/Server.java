@@ -1,4 +1,4 @@
-package org.example.design.other.callback.synchronization;
+package org.example.design.javaee.callback.synchronization;
 
 /**
  *  服务接口, 提供send回调参数函数

@@ -1,4 +1,4 @@
-package org.example.design.other.callback.asynchronous;
+package org.example.design.javaee.callback.asynchronous;
 
 import com.google.common.util.concurrent.FutureCallback;
 

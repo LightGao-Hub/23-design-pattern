@@ -1,4 +1,4 @@
-package org.example.design.other.callback.synchronization;
+package org.example.design.javaee.callback.synchronization;
 
 import org.junit.Test;
 

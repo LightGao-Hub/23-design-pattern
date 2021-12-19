@@ -1,4 +1,4 @@
-package org.example.design.other.callback.asynchronous;
+package org.example.design.javaee.callback.asynchronous;
 
 /**
  *  消息请求实现类
