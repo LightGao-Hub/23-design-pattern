@@ -9,14 +9,9 @@ import java.util.List;
  * Author: GL
  * Date: 2021-11-10
  */
-public class RedisDatabase<T> extends Colleague<T> {
+public class RedisDatabase<T> extends Colleague<DatabaseType, T> {
 
     private final List<T> dataset = new LinkedList<>();
-
-    public RedisDatabase(AbstractMediator<T> mediator) {
-        super(mediator);
-        super.getMediator().register(DatabaseType.REDIS, this);
-    }
 
     @Override
     public void addData(T data) {

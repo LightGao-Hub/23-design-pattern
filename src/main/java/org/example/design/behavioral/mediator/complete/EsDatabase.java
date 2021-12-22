@@ -9,14 +9,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * Author: GL
  * Date: 2021-11-10
  */
-public class EsDatabase<T> extends Colleague<T> {
+public class EsDatabase<T> extends Colleague<DatabaseType, T> {
 
     private final List<T> dataset = new CopyOnWriteArrayList<>();
-
-    public EsDatabase(AbstractMediator<T> mediator) {
-        super(mediator);
-        super.getMediator().register(DatabaseType.ES, this);
-    }
 
     @Override
     public void addData(T data) {

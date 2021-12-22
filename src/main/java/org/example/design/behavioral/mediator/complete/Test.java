@@ -35,11 +35,15 @@ public class Test {
     public static void main(String[] args) {
 
         // 新建中介实现类后存入各个业务实现类中，再由实现类反注册进中介实现类中
-        AbstractMediator<String> syncMediator = new SyncMediator<>();
+        AbstractMediator<DatabaseType, String> mediator = new SyncMediator<>();
 
-        MysqlDatabase<String> mysqlDatabase = new MysqlDatabase<>(syncMediator);
-        RedisDatabase<String> redisDatabase = new RedisDatabase<>(syncMediator);
-        EsDatabase<String> esDatabase = new EsDatabase<>(syncMediator);
+        MysqlDatabase<String> mysqlDatabase = new MysqlDatabase<>();
+        RedisDatabase<String> redisDatabase = new RedisDatabase<>();
+        EsDatabase<String> esDatabase = new EsDatabase<>();
+
+        mediator.register(DatabaseType.MYSQL, mysqlDatabase);
+        mediator.register(DatabaseType.REDIS, redisDatabase);
+        mediator.register(DatabaseType.ES, esDatabase);
 
         System.out.println("\n---------mysql 添加数据 1，将同步到Redis和ES中----------");
         mysqlDatabase.add("1");

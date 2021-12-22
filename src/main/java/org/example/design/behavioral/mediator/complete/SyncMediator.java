@@ -6,7 +6,7 @@ package org.example.design.behavioral.mediator.complete;
  * Author: GL
  * Date: 2021-11-10
  */
-public class SyncMediator<T> extends AbstractMediator<T> {
+public class SyncMediator<T> extends AbstractMediator<DatabaseType, T> {
 
     // 根据类型进行不同方式的同步
     @Override

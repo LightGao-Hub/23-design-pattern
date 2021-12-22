@@ -9,14 +9,9 @@ import java.util.List;
  * Author: GL
  * Date: 2021-11-10
  */
-public class MysqlDatabase<T> extends Colleague<T> {
+public class MysqlDatabase<T> extends Colleague<DatabaseType, T> {
 
     private final List<T> dataset = new ArrayList<>();
-
-    public MysqlDatabase(AbstractMediator<T> mediator) {
-        super(mediator);
-        super.getMediator().register(DatabaseType.MYSQL, this);
-    }
 
     @Override
     public void addData(T data) {
