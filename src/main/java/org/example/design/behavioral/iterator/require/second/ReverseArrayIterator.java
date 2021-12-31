@@ -1,4 +1,4 @@
-package org.example.design.behavioral.iterator.begin.two;
+package org.example.design.behavioral.iterator.require.second;
 
 import java.util.Iterator;
 

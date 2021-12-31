@@ -84,10 +84,9 @@ public class ListArrayCollection<T> implements ArrayCollection<T> {
     }
 
     /**
-     *  内部类实现Iterator，使用内部类的方便之处在于可以无形中引用外部类中的变量，如下使用index < array.length 十分方便;
+     *  内部类实现Iterator，使用内部类的方便之处在于可以无形中引用外部类中的变量，如下：index、modCount等变量;
      */
     private final class ListIterator implements Iterator<T> {
-        // index 在创建时默认为0
         int index;
         int expectedModCount = modCount;
 
@@ -105,7 +104,7 @@ public class ListArrayCollection<T> implements ArrayCollection<T> {
             return null;
         }
 
-        // 当初始化迭代器时的modCount和 集合中expectedModCount不一样时，代表元素更改，抛出异常
+        // 当集合中modCount 和 初始化迭代器时的expectedModCount不一样时，代表元素更改，抛出异常
         private void checkForComodification() {
             if (modCount != this.expectedModCount) throw new ConcurrentModificationException();
         }

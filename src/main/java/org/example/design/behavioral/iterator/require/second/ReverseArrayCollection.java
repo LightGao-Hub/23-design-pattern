@@ -1,10 +1,11 @@
-package org.example.design.behavioral.iterator.begin.two;
+package org.example.design.behavioral.iterator.require.second;
 
 import java.util.Arrays;
 import java.util.Iterator;
 
 /**
- *  集合类：暂不考虑集合元素修改情况
+ *  集合类：实现Iterable接口
+ *  暂不考虑集合元素修改情况
  *
  * Author: GL
  * Date: 2021-11-08

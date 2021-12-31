@@ -10,5 +10,5 @@ public interface ArrayCollection<T> extends Iterable<T> {
 
     boolean add(T e);
 
-    public boolean remove(int index);
+    boolean remove(int index);
 }

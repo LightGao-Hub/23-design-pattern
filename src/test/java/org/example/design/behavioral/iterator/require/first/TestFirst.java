@@ -1,4 +1,6 @@
-package org.example.design.behavioral.iterator.begin.one;
+package org.example.design.behavioral.iterator.require.first;
+
+import org.junit.Test;
 
 import java.util.Iterator;
 
@@ -7,16 +9,17 @@ import java.util.Iterator;
  *
  *  暂不考虑元素迭代过程中集合增加数据的情况
  *
- *  如下Test代码：
- *      如果集合类单独实现Iterator接口，这会导致在集合类中将会维护一个指针index，当多个函数或线程进行遍历的时候会导致指针无法确定位置！
- *      除非再单独刷新将指针重置后，才可以继续使用遍历
+ *  缺点：
+ *      1、如果集合类单独实现Iterator接口，这会导致在集合类中将会维护一个指针index，当多个函数或线程进行遍历的时候会导致指针无法确定位置！
+ *          除非再单独刷新将指针重置后，才可以继续使用遍历
+ *      2、不满足单一职责原则ReverseArrayCollection类就只负责集合即可，迭代就负责迭代即可
  *
  *  预期结果：
  *      用户想要的无非就是想简单的遍历集合即可，无论是多个线程还是多个函数，只想在每个函数或线程中获得一个从头开始计数的迭代器。
- *      那这最好的方法就是抽出一层iterable，里面有获取iterator迭代器函数，集合通过new对象的方式来返回一个新的从头开始计数的迭代器即可！参考two代码
+ *      那这最好的方法就是抽出一层iterable，里面有获取iterator迭代器函数，集合通过new对象的方式来返回一个新的从头开始计数的迭代器即可！
  *
  *  jdk设计：
- *      jdk的Iterable使用函数itertor()抽象函数然后子类分别实现返回一个iterator实例，实例中包含一个可以从头到尾开始计数的迭代器。
+ *      jdk的Iterables含有抽象函数iterator(), 所有子类都需要实现并返回一个iterator实例，实例中包含一个可以从头到尾开始计数的迭代器即可。
  *
  *  引用解释：
  *      因为Iterator接口的核心方法next()、hasNext(), 是依赖于迭代器的当前迭代位置的。
@@ -28,13 +31,14 @@ import java.util.Iterator;
  *      所以我们需要一个Iterable，有一个返回Iterator接口的函数，这样就可以每次调用iterator() 次调用都会返回一个从头开始计数的迭代器。
  *      多个迭代器是互不干扰的！
  *
- *      参考two代码
+ *  解决：参考second
  *
  * Author: GL
  * Date: 2021-11-08
  */
-public class Test {
-    public static void main(String[] args) {
+public class TestFirst {
+    @Test
+    public void test() {
         Iterator<Integer> iterator = new ReverseArrayCollection<>(1,2,3,4,5);
         System.out.println(iterator);
         new Thread(() -> {
