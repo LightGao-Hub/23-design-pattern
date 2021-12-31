@@ -1,6 +1,10 @@
 package org.example.design.behavioral.memento.complete;
 
 import org.example.design.behavioral.command.require.first.Client;
+import org.example.design.behavioral.memento.simple.Memento;
+
+import java.util.List;
+import java.util.Objects;
 
 /**
  * 发送放：股票发送接口
@@ -15,10 +19,17 @@ public abstract class StockClient implements Client {
     public abstract void send(StockCommand... stockCommand);
 
     // 撤回最近一次操作
-    public abstract void undo();
+    public void undo() {
+        Memento<StockCommand> stockCommandMemento = caretaker.retrieveMemento();
+        Objects.requireNonNull(stockCommandMemento, "stockCommandMemento is null");
+        stockCommandMemento.getState().undo();
+    }
 
     // 撤回最近count次操作
-    public abstract void undo(int count);
+    public void undo(int count) {
+        List<Memento<StockCommand>> mementos = caretaker.reverseMementos(count);
+        mementos.forEach(m -> m.getState().undo());
+    }
 
     public void select() {
         System.out.println(this.caretaker);

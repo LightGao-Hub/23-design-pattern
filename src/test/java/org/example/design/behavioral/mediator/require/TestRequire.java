@@ -1,5 +1,7 @@
 package org.example.design.behavioral.mediator.require;
 
+import org.junit.Test;
+
 /**
  * 本案例提供一种数据库场景：不使用中介模式
  *
@@ -32,7 +34,8 @@ package org.example.design.behavioral.mediator.require;
  * Date: 2021-11-10
  */
 public class TestRequire {
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         MysqlDatabase<String> mysqlDatabase = new MysqlDatabase<>();
         RedisDatabase<String> redisDatabase = new RedisDatabase<>();
         EsDatabase<String> esDatabase = new EsDatabase<>();

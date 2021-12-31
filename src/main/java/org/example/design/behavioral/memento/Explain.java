@@ -20,12 +20,6 @@ package org.example.design.behavioral.memento;
  *
  *      2、按照命令模式举例： 我们分为: 请求者A、服务器B、命令类1、命令类2; 那么在这个结构中:命令类1,2 就是需要备份的需要实现的Originator子类！ 而请求者A内部则持有Caretaker[备忘录负责人], 参考[complete包]
  *
- *  常见使用区别：
- *
- *      1、标准方式：采用集合list列表作为Caretaker负责人接口中存储备忘录对象集合，可以根据下标直接获取对应的快照类[simple包]
- *
- *      2、结合业务支持撤回操作：采用队列Queue的方式作为Caretaker负责人接口中存储备忘录对象集合，可以支持最近一次撤回和多次撤回，不过撤回后状态只保留到撤回状态![complete包]
- *
  * Author: GL
  * Date: 2021-11-15
  */

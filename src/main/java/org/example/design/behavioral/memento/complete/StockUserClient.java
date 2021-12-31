@@ -18,26 +18,11 @@ public class StockUserClient extends StockClient {
     // 记录命令及请求操作
     @Override
     public void send(StockCommand... stockCommand) {
+        System.out.println(String.format("StockUserClient name:%s send ... ", name));
         for (StockCommand command : stockCommand) {
             super.getCaretaker().saveMemento(command.createMemento());
             command.execute();
         }
-    }
-
-    // 撤回操作
-    @Override
-    public void undo() {
-        final Caretaker<StockCommand> caretaker = super.getCaretaker();
-        final Memento<StockCommand> stockCommandMemento = caretaker.retrieveMemento();
-        assert stockCommandMemento != null;
-        stockCommandMemento.getState().undo();
-    }
-
-    // 由于是撤销最近几次操作，故先获得备忘录中倒序获取的备忘录，循环撤回即可
-    @Override
-    public void undo(int count) {
-        final List<Memento<StockCommand>> mementos = super.getCaretaker().reverseMementos(count);
-        mementos.forEach(m -> m.getState().undo());
     }
 
     public StockUserClient(String name) {

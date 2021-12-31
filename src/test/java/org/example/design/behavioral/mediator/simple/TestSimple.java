@@ -2,6 +2,7 @@ package org.example.design.behavioral.mediator.simple;
 
 
 import org.example.design.behavioral.mediator.complete.DatabaseType;
+import org.junit.Test;
 
 /**
  *  此案例展示简单版中介模式，将所有引用统一注入进中介类进行管理，业务类只需持有中介类即可
@@ -44,7 +45,8 @@ import org.example.design.behavioral.mediator.complete.DatabaseType;
  * Date: 2021-12-30
  */
 public class TestSimple {
-    public static void main(String[] args) {
+    @Test
+    public void test() {
 
         final AbstractMediator<DatabaseType, AbstractDatabase<String>> mediator = new SyncMediator<>();
 

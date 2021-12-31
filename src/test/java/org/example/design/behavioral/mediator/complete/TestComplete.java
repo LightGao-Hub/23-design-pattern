@@ -1,5 +1,7 @@
 package org.example.design.behavioral.mediator.complete;
 
+import org.junit.Test;
+
 /**
  *  此案例是使用中介模式解决各组件引用依赖问题, 由中介集中管理所有引用及逻辑调用关系，各个数据库引用中介者类即可；
  *
@@ -43,7 +45,8 @@ package org.example.design.behavioral.mediator.complete;
  * Date: 2021-11-10
  */
 public class TestComplete {
-    public static void main(String[] args) {
+    @Test
+    public void test() {
 
         AbstractMediator<DatabaseType, String, AbstractDatabase<String>> mediator = new SyncMediator<>();
 

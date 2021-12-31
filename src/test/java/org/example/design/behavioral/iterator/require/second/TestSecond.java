@@ -1,6 +1,8 @@
 package org.example.design.behavioral.iterator.require.second;
 
 
+import org.junit.Test;
+
 import java.util.Iterator;
 
 /**
@@ -20,7 +22,8 @@ import java.util.Iterator;
  * Date: 2021-11-08
  */
 public class TestSecond {
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         ReverseArrayCollection<Integer> reverseArrayCollection = new ReverseArrayCollection<>();
         // 每个线程通过iterable.iterator() 返回迭代器进行迭代，从而保证从到到位执行
         new Thread(() -> {
