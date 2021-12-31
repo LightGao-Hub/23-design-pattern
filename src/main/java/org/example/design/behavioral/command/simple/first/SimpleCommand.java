@@ -1,4 +1,4 @@
-package org.example.design.behavioral.command.require.one;
+package org.example.design.behavioral.command.simple.first;
 
 import lombok.Getter;
 

@@ -1,4 +1,4 @@
-package org.example.design.behavioral.command.require.three;
+package org.example.design.behavioral.command.require.second;
 
 /**
  *  股票请求类型

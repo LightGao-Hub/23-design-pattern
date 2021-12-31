@@ -1,11 +1,11 @@
-package org.example.design.behavioral.command.require.three;
+package org.example.design.behavioral.command.require.second;
 
-import org.example.design.behavioral.command.require.two.StockManagerReceive;
+import org.example.design.behavioral.command.require.first.StockManagerReceive;
 import org.junit.Test;
 
 /**
  *  这里我们来解决上一个包下的问题，常用的解决思路是将请求进行单独抽象并封装，同时请求持有接收端的引用并组装逻辑，发送端只需调用请求的抽象函数即可
- *  此实现本质上是中介者模式，详细可看[mediator包]
+ *      此实现本质上是一个中介者模式，详细可看[mediator包]
  *
  *  结构：
  *
@@ -30,12 +30,12 @@ import org.junit.Test;
  *
  *  缺点：虽然将请求方和接收方进行解耦，但设计依然不合理，因其send函数需要通过StockType枚举类型进行判断才可执行响应函数，并未将各个模块完全拆分；
  *
- *  解决：参考simple包下的Test类
+ *  解决：参考simple包
  *
  * Author: GL
  * Date: 2021-11-05
  */
-public class TestThree {
+public class TestSecond {
     @Test
     public void test() {
         // 构建请求类

@@ -1,6 +1,6 @@
 package org.example.design.behavioral.memento.complete;
 
-import org.example.design.behavioral.command.require.two.StockReceive;
+import org.example.design.behavioral.command.require.first.StockReceive;
 import org.example.design.behavioral.memento.simple.Originator;
 
 /**

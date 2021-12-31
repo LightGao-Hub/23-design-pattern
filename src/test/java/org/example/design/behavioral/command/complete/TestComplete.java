@@ -1,7 +1,7 @@
 package org.example.design.behavioral.command.complete;
 
-import org.example.design.behavioral.command.require.two.StockManagerReceive;
-import org.example.design.behavioral.command.require.two.StockReceive;
+import org.example.design.behavioral.command.require.first.StockManagerReceive;
+import org.example.design.behavioral.command.require.first.StockReceive;
 import org.junit.Test;
 
 /**
@@ -36,7 +36,7 @@ import org.junit.Test;
  *          而状态中持有服务端引用和请求逻辑即可，注意线程安全问题；
  *
  *      2、目前的设计是客户端和服务端一对一，当客户端对应多个服务端的时候，则每一个命令类内部都需要引用多个服务端[股票经理人A, 股票经理人B, 股票经理人C]，
- *          此时命令实现类中的引用就会很复杂[可能一个buy命令实现类需要引用A,B两个股票经理人]，解决方案是：状态模式 + 简单版中介者模式[behavioral.mediator.simple]
+ *          此时命令实现类中的引用就会很复杂[可能一个buy命令实现类需要引用A,B两个股票经理人]，解决方案是：命令模式类持有一个简单版中介者模式，参考[behavioral.mediator.simple]
  *
  *      3、注意：命令模式中的记录历史命令是有缺陷的，此模式的记录命令并不是快照方式，而是将原有的引用放进队列，此时如果命令内部属性修改，则队列中的元素也会修改，并不会起到快照作用，所以此处有漏洞。
  *         解决：参考备忘录模式[behavioral.memento.complete]

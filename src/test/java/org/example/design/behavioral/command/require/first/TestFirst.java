@@ -1,4 +1,4 @@
-package org.example.design.behavioral.command.require.two;
+package org.example.design.behavioral.command.require.first;
 
 import org.junit.Test;
 
@@ -31,12 +31,12 @@ import org.junit.Test;
  *
  *  弊端：客户端必须对服务端的函数有所了解，才能构建客户端的函数体，不仅如此，更重要的是增加了后面维护的成本，假如StockReceive新增函数，那么客户端也要进行修改，不符合开闭原则！
  *
- *  解决：参考two包下Test类
+ *  解决：参考second包
  *
  * Author: GL
  * Date: 2021-11-05
  */
-public class TestTwo {
+public class TestFirst {
     @Test
     public void test() {
         StockClient stockClient = new StockUserClient(new StockManagerReceive("maYun"), "liJie");

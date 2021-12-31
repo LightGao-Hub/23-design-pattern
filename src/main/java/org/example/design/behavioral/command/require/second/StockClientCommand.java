@@ -1,6 +1,6 @@
-package org.example.design.behavioral.command.require.three;
+package org.example.design.behavioral.command.require.second;
 
-import org.example.design.behavioral.command.require.two.StockReceive;
+import org.example.design.behavioral.command.require.first.StockReceive;
 
 /**
  *  股票请求实现类

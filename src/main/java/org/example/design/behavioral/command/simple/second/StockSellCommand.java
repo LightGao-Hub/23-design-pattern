@@ -1,6 +1,6 @@
-package org.example.design.behavioral.command.simple;
+package org.example.design.behavioral.command.simple.second;
 
-import org.example.design.behavioral.command.require.two.StockReceive;
+import org.example.design.behavioral.command.require.first.StockReceive;
 
 /**
  *  股票抛售命令实现类

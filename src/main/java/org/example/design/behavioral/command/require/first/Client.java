@@ -1,4 +1,4 @@
-package org.example.design.behavioral.command.require.two;
+package org.example.design.behavioral.command.require.first;
 
 /**
  *  请求标识接口

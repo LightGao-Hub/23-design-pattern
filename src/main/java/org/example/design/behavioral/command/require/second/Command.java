@@ -1,4 +1,4 @@
-package org.example.design.behavioral.command.simple;
+package org.example.design.behavioral.command.require.second;
 
 /**
  *  命令标识接口
@@ -7,5 +7,4 @@ package org.example.design.behavioral.command.simple;
  * Date: 2021-11-05
  */
 public interface Command {
-    void execute();
 }

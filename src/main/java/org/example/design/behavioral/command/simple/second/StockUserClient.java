@@ -1,4 +1,4 @@
-package org.example.design.behavioral.command.simple;
+package org.example.design.behavioral.command.simple.second;
 
 /**
  *  发送放: 用户股票发送方

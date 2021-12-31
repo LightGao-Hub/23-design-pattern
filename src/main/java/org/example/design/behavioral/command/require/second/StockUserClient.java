@@ -1,4 +1,4 @@
-package org.example.design.behavioral.command.require.three;
+package org.example.design.behavioral.command.require.second;
 
 /**
  *  发送放: 用户股票发送方

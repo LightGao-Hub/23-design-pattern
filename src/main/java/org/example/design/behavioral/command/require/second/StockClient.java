@@ -1,6 +1,6 @@
-package org.example.design.behavioral.command.require.three;
+package org.example.design.behavioral.command.require.second;
 
-import org.example.design.behavioral.command.require.two.Client;
+import org.example.design.behavioral.command.require.first.Client;
 
 /**
  *  发送放：股票发送放

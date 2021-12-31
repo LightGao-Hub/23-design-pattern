@@ -1,7 +1,7 @@
 package org.example.design.behavioral.memento.complete;
 
-import org.example.design.behavioral.command.require.two.StockManagerReceive;
-import org.example.design.behavioral.command.require.two.StockReceive;
+import org.example.design.behavioral.command.require.first.StockManagerReceive;
+import org.example.design.behavioral.command.require.first.StockReceive;
 
 /**
  *  此案例是命令模式 + 备忘录模式 + 一次性撤回多次功能

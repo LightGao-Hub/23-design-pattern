@@ -7,7 +7,7 @@ package org.example.design.behavioral.command;
  *  使得请求的一方不必知道接收请求的一方的接口，更不必知道请求是怎么被接收、以及操作是否被执行、何时被执行、怎么被执行的。
  *
  *  观看顺序：
- *     1、无命令模式实现-[参考usually包]
+ *     1、无命令模式实现-[参考require包]
  *     2、简化版命令模式-[参考simple包]
  *     3、完整版命令模式实现-[参考complete包]
  *
