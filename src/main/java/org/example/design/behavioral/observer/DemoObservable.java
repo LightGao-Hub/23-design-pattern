@@ -10,34 +10,25 @@ import java.util.Observable;
  * Date: 2021-10-24
  */
 @Data
-public class TeacherObservable extends Observable {
+public class DemoObservable extends Observable {
 
     private String name;
     private int age;
 
     public void init() {
-        System.out.println("初始化teacher");
+        System.out.println("初始化demo");
         this.setChanged();
         this.notifyObservers();
     }
 
     public void destroy() {
-        System.out.println("销毁teacher");
+        System.out.println("销毁demo");
         this.setChanged();
         this.notifyObservers();
     }
 
-    private void a() {
-        System.out.println("其他函数a");
-    }
-
-    private void b() {
-        System.out.println("其他函数b");
-    }
-
-    public TeacherObservable(String name, int age) {
+    public DemoObservable(String name, int age) {
         this.name = name;
         this.age = age;
     }
-
 }
