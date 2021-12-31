@@ -1,7 +1,7 @@
 package org.example.design.behavioral.state;
 
-import org.example.design.behavioral.command.usually.one.StockManagerReceive;
-import org.example.design.behavioral.command.usually.one.StockReceive;
+import org.example.design.behavioral.command.require.two.StockManagerReceive;
+import org.example.design.behavioral.command.require.two.StockReceive;
 
 /**
  *  此案例为状态模式：状态模式允许一个对象在其内部状态改变的时候改变其行为。这个对象看上去就像是改变了它的类一样。

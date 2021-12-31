@@ -1,7 +1,9 @@
 package org.example.design.behavioral.mediator.complete;
 
-import java.util.LinkedList;
+import lombok.Getter;
+
 import java.util.List;
+import java.util.Vector;
 
 /**
  *  Redis具体同事类
@@ -9,23 +11,22 @@ import java.util.List;
  * Author: GL
  * Date: 2021-11-10
  */
-public class RedisDatabase<T> extends Colleague<DatabaseType, T> {
+public class RedisDatabase<T> extends AbstractDatabase<T> {
 
-    private final List<T> dataset = new LinkedList<>();
+    @Getter
+    private final List<T> dataset = new Vector<>(); // 数据存储
+
+    protected RedisDatabase() {
+        super(DatabaseType.REDIS);
+    }
 
     @Override
-    public void addData(T data) {
+    public void receive(T data) {
         System.out.println("Redis 添加数据：" + data);
-        this.dataset.add(data);
+        dataset.add(data);
     }
 
-    @Override
-    public void add(T data) {
-        addData(data);
-        super.getMediator().changed(DatabaseType.REDIS, data);    // 数据同步作业交给中介者管理
-    }
-
-    public void cache() {
-        System.out.println("Redis 缓存的数据：" + this.dataset.toString());
+    public void select() {
+        System.out.println("Redis 缓存的数据：" + dataset.toString());
     }
 }

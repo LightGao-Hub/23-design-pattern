@@ -17,8 +17,8 @@ import java.util.Random;
  *  │CallbackClient                                                         │                        │MessageServer │
  *  │ └callbackPool = AsynchronousCallback.INSTANCE.getCallbackThreadPool() │──────────────────┐     │ └receive(){} │
  *  │ └sendMessage() { this.callbackPool.addCallable(                       │                  │     └──────────────┘
- *  │       send(), success(), failure() ) };                               │                  │
- *  │ └abstract send()                                                      │                  │
+ *  │       add(), success(), failure() ) };                               │                  │
+ *  │ └abstract add()                                                      │                  │
  *  │ └abstract success()                                                   │                  │
  *  │ └abstract failure()                                                   │                  │
  *  └───────────────────────────────────────────────────────────────────────┘                  │
@@ -26,7 +26,7 @@ import java.util.Random;
  *        │                                                                                    │
  * ┌──────────────────────┐                                                                    │
  * │CallbackMessageClient │                                                                    │
- * │ └send(){}            │                                                                    │
+ * │ └add(){}            │                                                                    │
  * │ └success(){}         │                                                                    │
  * │ └failure(){}         │                                                                    │
  * └──────────────────────┘                                                                    │
@@ -45,7 +45,7 @@ import java.util.Random;
  *
  * 总结：
  *      1、由于AsynchronousCallback是单例枚举，得以保障每个CallbackClient通过引用AsynchronousCallback.INSTANCE.getCallbackThreadPool()得到的都是共享一个线程池！
- *      2、又因为CallbackClient的sendMessage函数合理构建抽象，使得下游实现类无需关注回调细节，只需要实现 send(), success(), failure() 细节即可，符合开闭原则
+ *      2、又因为CallbackClient的sendMessage函数合理构建抽象，使得下游实现类无需关注回调细节，只需要实现 add(), success(), failure() 细节即可，符合开闭原则
  *      3、由于CallbackThreadPool类的创建全权交给CallbackThreadPoolFactory，则CallbackThreadPool类可以设置为静态内部类
  *
  * Author: GL

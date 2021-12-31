@@ -1,9 +1,8 @@
 package org.example.design.behavioral.command.complete;
 
-import org.example.design.behavioral.command.usually.one.Client;
+import org.example.design.behavioral.command.require.two.Client;
 
 import java.util.Deque;
-import java.util.Queue;
 import java.util.concurrent.LinkedBlockingDeque;
 
 /**

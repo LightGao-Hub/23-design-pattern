@@ -1,7 +1,10 @@
 package org.example.design.behavioral.mediator.complete;
 
+
+import lombok.Getter;
+
+import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  *  ES具体同事类
@@ -9,24 +12,21 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * Author: GL
  * Date: 2021-11-10
  */
-public class EsDatabase<T> extends Colleague<DatabaseType, T> {
+public class EsDatabase<T> extends AbstractDatabase<T> {
+    @Getter
+    private final List<T> dataset = new LinkedList<>(); // 数据存储
 
-    private final List<T> dataset = new CopyOnWriteArrayList<>();
+    protected EsDatabase() {
+        super(DatabaseType.ES);
+    }
 
     @Override
-    public void addData(T data) {
+    public void receive(T data) {
         System.out.println("ES 添加数据：" + data);
-        this.dataset.add(data);
+        dataset.add(data);
     }
 
-    @Override
-    public void add(T data) {
-        addData(data);
-        super.getMediator().changed(DatabaseType.ES, data);    // 数据同步作业交给中介者管理
-    }
-
-    public void count() {
-        int count = this.dataset.size();
-        System.out.println("Elasticsearch 统计，目前有 " + count + " 条数据，数据：" + this.dataset.toString());
+    public void select() {
+        System.out.println("Elasticsearch 统计，目前有 " + dataset.size() + " 条数据，数据：" + dataset.toString());
     }
 }

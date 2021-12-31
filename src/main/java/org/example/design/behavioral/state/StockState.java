@@ -1,7 +1,7 @@
 package org.example.design.behavioral.state;
 
 import lombok.Getter;
-import org.example.design.behavioral.command.usually.one.StockReceive;
+import org.example.design.behavioral.command.require.two.StockReceive;
 
 /**
  *  股票状态类

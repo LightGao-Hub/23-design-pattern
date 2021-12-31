@@ -54,7 +54,7 @@ public class Test {
                 "2 - Twitter");
         int choice = Integer.parseInt(reader.readLine());
 
-        // Create proper network object and send the message.
+        // Create proper network object and add the message.
         if (choice == 1) {
             network = new Facebook(userName, password);
         } else if (choice == 2) {

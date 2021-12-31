@@ -1,6 +1,6 @@
 package org.example.design.behavioral.memento.complete;
 
-import org.example.design.behavioral.command.usually.one.Client;
+import org.example.design.behavioral.command.require.two.Client;
 
 /**
  * 发送放：股票发送接口

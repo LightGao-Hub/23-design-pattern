@@ -1,6 +1,6 @@
 package org.example.design.behavioral.command.simple;
 
-import org.example.design.behavioral.command.usually.one.StockReceive;
+import org.example.design.behavioral.command.require.two.StockReceive;
 
 /**
  *  股票请求抽象父类

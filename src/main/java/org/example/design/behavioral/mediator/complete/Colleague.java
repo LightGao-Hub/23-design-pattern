@@ -1,17 +1,14 @@
 package org.example.design.behavioral.mediator.complete;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 /**
- *  抽象同事类, 继承Database接口，否则在中介者类无法调用Database接口函数
+ *  同事类
  *
  * Author: GL
- * Date: 2021-12-05
+ * Date: 2021-12-26
  */
-public abstract class Colleague<K, E> implements Database<E> {
-    @Getter
-    @Setter
-    private AbstractMediator<K, E> mediator;    // 中介者
-
+@Data
+public abstract class Colleague<K, T> {
+    private AbstractMediator<K, T, ? extends Colleague<K ,T>> mediator;    // 中介者
 }

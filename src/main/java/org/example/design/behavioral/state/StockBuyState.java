@@ -1,6 +1,6 @@
 package org.example.design.behavioral.state;
 
-import org.example.design.behavioral.command.usually.one.StockReceive;
+import org.example.design.behavioral.command.require.two.StockReceive;
 
 /**
  *  股票购买状态类

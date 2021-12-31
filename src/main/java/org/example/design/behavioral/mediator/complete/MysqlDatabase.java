@@ -1,7 +1,9 @@
 package org.example.design.behavioral.mediator.complete;
 
-import java.util.ArrayList;
+import lombok.Getter;
+
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  *  MYSQL具体同事类
@@ -9,23 +11,22 @@ import java.util.List;
  * Author: GL
  * Date: 2021-11-10
  */
-public class MysqlDatabase<T> extends Colleague<DatabaseType, T> {
+public class MysqlDatabase<T> extends AbstractDatabase<T> {
 
-    private final List<T> dataset = new ArrayList<>();
+    @Getter
+    private final List<T> dataset = new CopyOnWriteArrayList<>(); // 数据存储
 
-    @Override
-    public void addData(T data) {
-        System.out.println("Mysql 添加数据：" + data);
-        this.dataset.add(data);
+    protected MysqlDatabase() {
+        super(DatabaseType.MYSQL);
     }
 
     @Override
-    public void add(T data) {
-        addData(data);
-        super.getMediator().changed(DatabaseType.MYSQL, data); // 数据同步作业交给中介者管理
+    public void receive(T data) {
+        System.out.println("Mysql 添加数据：" + data);
+        dataset.add(data);
     }
 
     public void select() {
-        System.out.println("Mysql 查询，数据：" + this.dataset.toString());
+        System.out.println("Mysql 查询，数据：" + dataset.toString());
     }
 }
