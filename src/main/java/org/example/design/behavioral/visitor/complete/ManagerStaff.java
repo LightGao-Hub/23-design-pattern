@@ -1,5 +1,7 @@
 package org.example.design.behavioral.visitor.complete;
 
+import static org.example.design.config.FinalConfig.TEN_SIZE;
+
 import java.util.Random;
 
 /**
@@ -20,6 +22,6 @@ public class ManagerStaff extends Staff {
     }
     // 一年做的产品数量
     public int getProducts() {
-        return new Random().nextInt(10);
+        return new Random().nextInt(TEN_SIZE);
     }
 }

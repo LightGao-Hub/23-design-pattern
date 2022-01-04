@@ -13,12 +13,12 @@ public class ManagerFinanceHandler extends FinanceHandler<Double> {
     private final BigDecimal money;
 
     public ManagerFinanceHandler(Double weight, BigDecimal money) {
-        super.weight = weight;
+        super(weight);
         this.money = money;
     }
 
     public Boolean process(FinanceRequest financeRequest) {
-        // 处理不了，返回false, 交下一个处理:
+        // 处理不了, 返回false, 交下一个处理:
         return financeRequest.getAmount().compareTo(this.money) <= 0;
     }
 }

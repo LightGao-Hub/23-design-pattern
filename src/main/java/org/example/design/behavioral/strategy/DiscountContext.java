@@ -1,8 +1,8 @@
 package org.example.design.behavioral.strategy;
 
-import lombok.Getter;
-
 import java.math.BigDecimal;
+
+import lombok.Getter;
 
 /**
  * Author: GL

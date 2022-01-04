@@ -10,5 +10,5 @@ import lombok.Data;
  */
 @Data
 public abstract class Colleague<K, T> {
-    private AbstractMediator<K, T, ? extends Colleague<K ,T>> mediator;    // 中介者
+    private AbstractMediator<K, T, ? extends Colleague<K, T>> mediator;    // 中介者
 }

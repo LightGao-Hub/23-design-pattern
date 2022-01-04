@@ -1,10 +1,11 @@
 package org.example.design.behavioral.memento.complete;
 
-import org.example.design.behavioral.command.require.first.Client;
-import org.example.design.behavioral.memento.simple.Memento;
-
 import java.util.List;
 import java.util.Objects;
+
+import lombok.extern.log4j.Log4j2;
+import org.example.design.behavioral.command.require.first.Client;
+import org.example.design.behavioral.memento.simple.Memento;
 
 /**
  * 发送放：股票发送接口
@@ -12,6 +13,7 @@ import java.util.Objects;
  * Author: GL
  * Date: 2021-11-05
  */
+@Log4j2
 public abstract class StockClient implements Client {
     // 备忘录模式中责任类
     private final Caretaker<StockCommand> caretaker = new Caretaker<>();
@@ -32,7 +34,7 @@ public abstract class StockClient implements Client {
     }
 
     public void select() {
-        System.out.println(this.caretaker);
+        log.info(this.caretaker);
     }
 
     public Caretaker<StockCommand> getCaretaker() {

@@ -16,18 +16,18 @@ import org.junit.Test;
  *     └────────┘            │  └LinkedBlockingDeque<Memento> │<--------│ Memento   │       │ Command │                 ┌───────────────────────────┐           ┌─────────┐
  *          ▲                └────────────────────────────────┘         │  └state<> │       └─────────┘                 │ Originator                │           │ Receive │
  *          │                           ▲                               └───────────┘            ▲                      │  └createMemento()         │           └─────────┘
- *    ┌──────────────┐                  │                   克隆接口 ┌─────────────────────────────│─────────────────────>│  └restoreMemento(Memento) │                ▲
- *    │StockClient   │                  │                  ┌───────────┐                  ┌─────────────┐               └───────────────────────────┘                │
- *    │└caretaker    │------------------┘                  │ Cloneable │                  │StockCommand │                                                     ┌─────────────┐
- *    └──────────────┘                                     └───────────┘                  │└stockService│<----------------------------------------------------│StockReceive │ 只有StockCommand持有StockReceive引用
- *          ▲                                                                             └─────────────┘                                                     └─────────────┘
+ *    ┌──────────────┐                  │                   克隆接口 ┌─────────────────────────────│────────────────────>│  └restoreMemento(Memento) │                ▲
+ *    │StockClient   │                  │                          ↓                      ┌─────────────┐               └───────────────────────────┘                │
+ *    │└caretaker    │------------------┘                  ┌───────────┐                  │StockCommand │                                                     ┌─────────────┐
+ *    └──────────────┘                                     │ Cloneable │                  │└stockService│<----------------------------------------------------│StockReceive │ 只有StockCommand持有StockReceive引用
+ *          ▲                                              └───────────┘                  └─────────────┘                                                     └─────────────┘
  *          │                                                                                    ▲                                                                   ▲
  *   ┌────────────────┐                                                          ┌───────────────┼───────────────┐                                                   │
  *   │StockUserClient │                                                   ┌─────────────────┐            ┌───────────────┐                                 ┌────────────────────┐
  *   └────────────────┘                                                   │StockSellCommand │            │StockBuyCommand│                                 │StockManagerReceive │
  *                                                                        └─────────────────┘            └───────────────┘                                 └────────────────────┘
  *  总结：
- *      此案例将命令存储在队列以实现记录历史命令，注意此队列要是线程安全队列，且支持栈结构从后读取
+ *      此案例将命令存储在队列以实现记录历史命令, 注意此队列要是线程安全队列, 且支持栈结构从后读取
  *
  * Author: GL
  * Date: 2021-11-05
@@ -36,13 +36,13 @@ public class TestComple {
     @Test
     public void test() {
         // 构建服务方
-        StockReceive maYun = new StockManagerReceive("maYun");
+        StockReceive maYun = new StockManagerReceive("Jack Ma");
         // 构建命令
         StockCommand stockBuyCommand = new StockBuyCommand(maYun);
         StockCommand stockSellCommand = new StockSellCommand(maYun);
         // 构建用户
-        StockClient liJie = new StockUserClient("liJie");
-        // 先买再卖，再买，再买
+        StockClient liJie = new StockUserClient("Yong Hao Luo");
+        // 先买再卖, 再买, 再买
         liJie.send(stockBuyCommand, stockSellCommand, stockBuyCommand, stockSellCommand);
         // 撤回最近一次购买
         liJie.undo();

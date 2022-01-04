@@ -1,5 +1,8 @@
 package org.example.design.behavioral.visitor.complete;
 
+import static org.example.design.config.FinalConfig.TEN_SIZE;
+import static org.example.design.config.FinalConfig.THOUSAND_SIZE;
+
 import java.util.Random;
 
 /**
@@ -21,6 +24,6 @@ public class EngineerStaff extends Staff {
     }
     // 工程师一年的代码数量
     public int getCodeLines() {
-        return new Random().nextInt(10 * 10000);
+        return new Random().nextInt(TEN_SIZE * THOUSAND_SIZE);
     }
 }

@@ -1,16 +1,20 @@
 package org.example.design.structural.proxy.statics;
 
+import lombok.extern.log4j.Log4j2;
+
 /**
+ *  业务类
  * Author: GL
  * Date: 2021-10-09
  */
+@Log4j2
 public class UserDaoImpl implements UserDao {
 
-    public void save(String name) {
-        System.out.println("保存数据 name:" + name);
+    public void save(String data) {
+        log.info(String.format("Save data: %s", data));
     }
 
     public void update() {
-        System.out.println("修改数据");
+        log.info("Modify data");
     }
 }

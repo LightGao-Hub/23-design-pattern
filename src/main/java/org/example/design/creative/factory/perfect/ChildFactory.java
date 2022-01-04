@@ -1,8 +1,7 @@
 package org.example.design.creative.factory.perfect;
 
-import org.example.design.creative.factory.simple.factory2.Child;
-import org.example.design.creative.factory.simple.factory2.Parent;
-import org.example.design.creative.factory.simple.factory2.Person;
+import org.example.design.creative.factory.simple.second.Child;
+import org.example.design.creative.factory.simple.second.Person;
 
 /**
  *  儿童单例工厂类

@@ -3,8 +3,8 @@ package org.example.design.structural.decorator;
 import java.util.Base64;
 
 /**
- *  加密装饰器，提供加密和解密能力，注意readData和writeData的实现区别：
- *      writeData是先加密后调用父类写入，readData则是先用父类读取后再解密
+ *  加密装饰器, 提供加密和解密能力, 注意readData和writeData的实现区别：
+ *      writeData是先加密后调用父类写入, readData则是先用父类读取后再解密
  *
  * Author: GL
  * Date: 2021-10-30

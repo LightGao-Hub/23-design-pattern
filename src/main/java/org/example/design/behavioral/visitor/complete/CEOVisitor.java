@@ -1,20 +1,23 @@
 package org.example.design.behavioral.visitor.complete;
 
+import lombok.extern.log4j.Log4j2;
+
 /**
- *  CEO访问者
- *
+ * CEO访问者
+ * <p>
  * Author: GL
  * Date: 2021-11-24
  */
+@Log4j2
 public class CEOVisitor implements Visitor {
     @Override
     public void visit(EngineerStaff engineerStaff) {
-        System.out.println("工程师: " + engineerStaff.name + ", KPI: " + engineerStaff.kpi);
+        log.info(String.format("engineer: %s, KPI: %s", engineerStaff.getName(), engineerStaff.getKpi()));
     }
 
     @Override
     public void visit(ManagerStaff managerStaff) {
-        System.out.println("经理: " + managerStaff.name + ", KPI: " + managerStaff.kpi +
-                ", 新产品数量: " + managerStaff.getProducts());
+        log.info(String.format("manager: %s, KPI: %s, Number of new products: %s", managerStaff.getName(), managerStaff.getKpi(),
+                managerStaff.getProducts()));
     }
 }

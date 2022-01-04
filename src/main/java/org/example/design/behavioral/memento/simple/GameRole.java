@@ -1,5 +1,7 @@
 package org.example.design.behavioral.memento.simple;
 
+import static org.example.design.config.FinalConfig.TEN_SIZE;
+
 import lombok.Data;
 
 /**
@@ -23,8 +25,8 @@ public class GameRole implements Originator<GameRole>, Cloneable {
 
     // 战斗
     public void fight() {
-        this.blueQuantity -= 10;
-        this.redQuantity -= 10;
+        this.blueQuantity -= TEN_SIZE;
+        this.redQuantity -= TEN_SIZE;
     }
 
     @Override

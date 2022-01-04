@@ -1,10 +1,13 @@
 package org.example.design.structural.bridge;
 
+import lombok.extern.log4j.Log4j2;
+
 /**
  *  越野车实现类
  * Author: GL
  * Date: 2021-10-28
  */
+@Log4j2
 public class Suv extends Car {
 
     public Suv(Engine engine, Brand brand) {
@@ -14,12 +17,12 @@ public class Suv extends Car {
     @Override
     public void drive() {
         super.drive();
-        System.out.println(" SUV出发了 ");
+        log.info(" The SUV is leaving ");
     }
 
     @Override
     public void introduce() {
         super.introduce();
-        System.out.println(" 花了我40W ");
+        log.info(" It cost me 40W ");
     }
 }

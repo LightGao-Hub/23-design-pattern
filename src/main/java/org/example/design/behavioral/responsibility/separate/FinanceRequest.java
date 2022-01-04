@@ -1,8 +1,8 @@
 package org.example.design.behavioral.responsibility.separate;
 
-import lombok.Data;
-
 import java.math.BigDecimal;
+
+import lombok.Data;
 
 /**
  *  公司财务请求

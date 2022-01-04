@@ -1,9 +1,9 @@
 package org.example.design.behavioral.strategy;
 
-import lombok.Getter;
-
 import java.math.BigDecimal;
 import java.util.Objects;
+
+import lombok.Getter;
 
 /**
  *  折扣策略父类
@@ -17,7 +17,7 @@ public abstract class DiscountStrategy implements Strategy {
     private final String discount;
 
     public DiscountStrategy(String discount) {
-        Objects.requireNonNull(discount, "折扣粒度不允许为空");
+        Objects.requireNonNull(discount, "Discount granularity cannot be blank");
         this.discount = discount;
     }
 

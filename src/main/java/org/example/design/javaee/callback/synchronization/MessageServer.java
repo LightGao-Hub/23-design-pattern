@@ -1,19 +1,22 @@
 package org.example.design.javaee.callback.synchronization;
 
+import lombok.extern.log4j.Log4j2;
+
 /**
  *  服务实现类
  * Author: GL
  * Date: 2021-10-25
  */
+@Log4j2
 public class MessageServer implements Server<String> {
 
     public void receive(String message, MessageCallBack<String> callBack) {
         try {
-            System.out.println(message + " 消息推送完毕");
-            callBack.onSuccess("send成功");
+            log.info(String.format("Message: %s, push completed", message));
+            callBack.onSuccess("Send succeeded");
         } catch (Exception e) {
             e.printStackTrace();
-            callBack.onFailure("send失败");
+            callBack.onFailure("Send failed");
         }
     }
 }

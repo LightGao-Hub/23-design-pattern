@@ -23,7 +23,7 @@ public class StockClientCommand extends StockCommand {
                 super.getStockService().sell();
                 break;
             default:
-                throw new RuntimeException(" 请求类型异常 ");
+                throw new RuntimeException(" Request type exception ");
         }
     }
 

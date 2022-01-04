@@ -1,9 +1,11 @@
 package org.example.design.behavioral.responsibility.connect;
 
-import lombok.Data;
-import org.example.design.behavioral.responsibility.separate.FinanceRequest;
-
 import java.math.BigDecimal;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.extern.log4j.Log4j2;
+import org.example.design.behavioral.responsibility.separate.FinanceRequest;
 
 /**
  *  leader处理
@@ -11,7 +13,9 @@ import java.math.BigDecimal;
  * Author: GL
  * Date: 2021-11-02
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
+@Log4j2
 public class ManagerFinanceHandler extends FinanceHandlerChain {
     // 审批人
     private String name;
@@ -25,10 +29,10 @@ public class ManagerFinanceHandler extends FinanceHandlerChain {
 
     // leader自己的处理逻辑
     @Override
-    public void handleRequest(FinanceRequest financeRequest) {
+    public void process(FinanceRequest financeRequest) {
         assert financeRequest != null;
         if (financeRequest.getAmount().compareTo(this.amount) <= 0) {
-            System.out.println(String.format(" %s 审批通过 ", this.name));
+            log.info(String.format(" %s Approved ", this.name));
         } else {
             super.onSuccess(financeRequest);
         }

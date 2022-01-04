@@ -3,7 +3,7 @@ package org.example.design.behavioral.command.require.first;
 import org.junit.Test;
 
 /**
- *  这里举例一个没有使用命令模式，常用的请求和接受操作的设计：
+ *  这里举例一个没有使用命令模式, 常用的请求和接受操作的设计：
  *
  *      现在模拟一个用户向股票经理人服务器发送请求的场景：
  *
@@ -27,9 +27,9 @@ import org.junit.Test;
  *      │StockUserClient │    │StockManagerReceive │
  *      └────────────────┘    └────────────────────┘
  *
- *  总结：传统的发送和接受场景里，客户端会持有服务端的引用，然后会根据服务端的函数进而封装请求端的函数
+ *  总结：传统的发送和接受场景里, 客户端会持有服务端的引用, 然后会根据服务端的函数进而封装请求端的函数
  *
- *  弊端：客户端必须对服务端的函数有所了解，才能构建客户端的函数体，不仅如此，更重要的是增加了后面维护的成本，假如StockReceive新增函数，那么客户端也要进行修改，不符合开闭原则！
+ *  弊端：客户端必须对服务端的函数有所了解, 才能构建客户端的函数体, 不仅如此, 更重要的是增加了后面维护的成本, 假如StockReceive新增函数, 那么客户端也要进行修改, 不符合开闭原则！
  *
  *  解决：参考second包
  *
@@ -39,7 +39,7 @@ import org.junit.Test;
 public class TestFirst {
     @Test
     public void test() {
-        StockClient stockClient = new StockUserClient(new StockManagerReceive("maYun"), "liJie");
+        StockClient stockClient = new StockUserClient(new StockManagerReceive("Jack Ma"), "Yong Hao Luo");
         stockClient.buy();
         stockClient.sell();
     }

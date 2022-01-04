@@ -1,11 +1,11 @@
 package org.example.design.behavioral.mediator.complete;
 
-import lombok.Getter;
 
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
+import lombok.Getter;
 /**
  *  中介抽象父类
  *
@@ -21,7 +21,7 @@ public abstract class AbstractMediator<K, T, V extends Colleague<K, T>> {
         Objects.requireNonNull(key, "key must not null");
         Objects.requireNonNull(colleague, "colleague must not null");
         dataMap.put(key, colleague);
-        colleague.setMediator(this); // 在此注册函数将中介类反注册进colleague类中，因此MysqlDatabase等子类无需知道中介类的存在
+        colleague.setMediator(this); // 在此注册函数将中介类反注册进colleague类中, 因此MysqlDatabase等子类无需知道中介类的存在
     }
 
     public abstract void changed(K key, T data);

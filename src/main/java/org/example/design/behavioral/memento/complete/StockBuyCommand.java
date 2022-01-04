@@ -5,7 +5,7 @@ import org.example.design.behavioral.command.require.first.StockReceive;
 import org.example.design.behavioral.memento.simple.Memento;
 
 /**
- *  股票购买命令实现类，实现备忘录模式的发起人接口
+ *  股票购买命令实现类, 实现备忘录模式的发起人接口
  *
  * Author: GL
  * Date: 2021-11-05
@@ -40,7 +40,7 @@ public class StockBuyCommand extends StockCommand {
     @Override
     protected StockBuyCommand clone() {
         try {
-            return (StockBuyCommand)super.clone();
+            return (StockBuyCommand) super.clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
             return null;
@@ -49,6 +49,6 @@ public class StockBuyCommand extends StockCommand {
 
     @Override
     public void restoreMemento(Memento<StockCommand> memento) {
-        // 由于此命令内部不存储变量，故无需实现此函数
+        // 由于此命令内部不存储变量, 故无需实现此函数
     }
 }

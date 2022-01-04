@@ -1,29 +1,31 @@
 package org.example.design.structural.cache;
 
-
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import lombok.extern.log4j.Log4j2;
+
 /**
+ *  枚举单例类
+ *
  * Author: GL
  * Date: 2021-10-31
  */
-public class StudentFactory {
+@Log4j2
+public enum StudentFactory {
+    ;
 
     // 持有缓存-使用线程安全map:
-    private static final Map<Integer, Student> cache = new ConcurrentHashMap<>();
+    private static final Map<Integer, Student> CACHE = new ConcurrentHashMap<>();
 
     public static Student create(int id, String name) {
-        Student std = cache.getOrDefault(id, null);
-        // 缓存中存在:
+        Student std = CACHE.getOrDefault(id, null);
         if (std == null) {
-            // 未找到,创建新对象:
-            System.out.println(String.format("create new Student(%s, %s)", id, name));
+            log.info(String.format("create new Student(%s, %s)", id, name));
             std = new Student(id, name);
-            // 放入缓存:
-            cache.put(id, std);
+            CACHE.put(id, std);
         } else {
-            System.out.println(String.format("return cached Student:%s", std));
+            log.info(String.format("return cached Student:%s", std));
         }
         return std;
     }

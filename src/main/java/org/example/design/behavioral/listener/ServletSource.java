@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- *  被监听者实现监听器接口，目的是和监听器的函数保持一致，方便监听器子类使用
+ *  被监听者实现监听器接口, 目的是和监听器的函数保持一致, 方便监听器子类使用
  *
  * Author: GL
  * Date: 2021-11-28

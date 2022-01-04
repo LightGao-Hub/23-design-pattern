@@ -1,8 +1,6 @@
 package org.example.design.structural.decorator;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import static org.example.design.config.FinalConfig.OUTPUT_STREAM_SIZE;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -13,9 +11,13 @@ import java.util.zip.Deflater;
 import java.util.zip.DeflaterOutputStream;
 import java.util.zip.InflaterInputStream;
 
+import lombok.Getter;
+import lombok.Setter;
+
+
 /**
- *  压缩装饰器类，提供压缩和解压缩能力，注意readData和writeData的实现区别：
- *      writeData是先压缩后调用父类写入，readData则是先用父类读取后再解压缩
+ *  压缩装饰器类, 提供压缩和解压缩能力, 注意readData和writeData的实现区别：
+ *      writeData是先压缩后调用父类写入, readData则是先用父类读取后再解压缩
  *
  * Author: GL
  * Date: 2021-10-30
@@ -42,7 +44,7 @@ public class CompressionDecorator extends DataSourceDecorator {
     private String compress(String stringData) {
         byte[] data = stringData.getBytes();
         try {
-            ByteArrayOutputStream bout = new ByteArrayOutputStream(512);
+            ByteArrayOutputStream bout = new ByteArrayOutputStream(OUTPUT_STREAM_SIZE);
             DeflaterOutputStream dos = new DeflaterOutputStream(bout, new Deflater(compLevel));
             dos.write(data);
             dos.close();
@@ -58,7 +60,7 @@ public class CompressionDecorator extends DataSourceDecorator {
         try {
             InputStream in = new ByteArrayInputStream(data);
             InflaterInputStream iin = new InflaterInputStream(in);
-            ByteArrayOutputStream bout = new ByteArrayOutputStream(512);
+            ByteArrayOutputStream bout = new ByteArrayOutputStream(OUTPUT_STREAM_SIZE);
             int b;
             while ((b = iin.read()) != -1) {
                 bout.write(b);

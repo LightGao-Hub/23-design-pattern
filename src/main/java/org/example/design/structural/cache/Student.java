@@ -2,8 +2,6 @@ package org.example.design.structural.cache;
 
 import lombok.Data;
 
-import java.util.Random;
-
 /**
  *  学生类
  *

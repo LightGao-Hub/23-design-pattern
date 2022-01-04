@@ -16,7 +16,7 @@ public class StockUserClient extends StockClient {
 
     @Override
     public void send() {
-        Objects.requireNonNull(super.getStockState(), "状态不允许为空");
+        Objects.requireNonNull(super.getStockState(), "Status cannot be empty");
         super.getStockState().handle();
     }
 }

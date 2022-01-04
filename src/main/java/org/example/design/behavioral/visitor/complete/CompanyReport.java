@@ -1,9 +1,9 @@
 package org.example.design.behavioral.visitor.complete;
 
-import lombok.Getter;
-
 import java.util.LinkedList;
 import java.util.List;
+
+import lombok.Getter;
 
 /**
  *  报表父类
@@ -18,7 +18,7 @@ public abstract class CompanyReport {
 
     /**
      * 根据访问者展示报表
-     * @param visitor 公司高层，如CEO、CTO
+     * @param visitor 公司高层, 如CEO、CTO
      */
     public abstract void showReport(Visitor visitor);
 }

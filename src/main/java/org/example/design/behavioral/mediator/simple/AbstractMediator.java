@@ -1,10 +1,10 @@
 package org.example.design.behavioral.mediator.simple;
 
-import lombok.Getter;
-
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
+
+import lombok.Getter;
 
 /**
  *  简单版中介抽象父类

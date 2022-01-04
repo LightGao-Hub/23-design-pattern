@@ -1,10 +1,11 @@
 package org.example.design.behavioral.mediator.require;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.LinkedList;
 import java.util.List;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.log4j.Log4j2;
 
 /**
  *  ES实体类
@@ -12,6 +13,7 @@ import java.util.List;
  * Author: GL
  * Date: 2021-11-10
  */
+@Log4j2
 public class EsDatabase<T> implements Database<T> {
     @Getter
     private final List<T> dataset = new LinkedList<>(); // 数据存储
@@ -20,7 +22,7 @@ public class EsDatabase<T> implements Database<T> {
 
     @Override
     public void receive(T data) {
-        System.out.println("ES 添加数据：" + data);
+        log.info("ES 添加数据：" + data);
         this.dataset.add(data);
     }
 
@@ -31,6 +33,6 @@ public class EsDatabase<T> implements Database<T> {
     }
 
     public void select() {
-        System.out.println("- Elasticsearch 统计，目前有 " + this.dataset.size() + " 条数据，数据：" + this.dataset.toString());
+        log.info("- Elasticsearch 统计, 目前有 " + this.dataset.size() + " 条数据, 数据：" + this.dataset.toString());
     }
 }

@@ -1,10 +1,13 @@
 package org.example.design.structural.bridge;
 
+import lombok.extern.log4j.Log4j2;
+
 /**
  *  跑车实现类
  * Author: GL
  * Date: 2021-10-28
  */
+@Log4j2
 public class SportsCar extends Car {
 
     public SportsCar(Engine engine, Brand brand) {
@@ -14,12 +17,12 @@ public class SportsCar extends Car {
     @Override
     public void drive() {
         super.drive();
-        System.out.println(" 跑车出发了 ");
+        log.info(" The sports car is leaving ");
     }
 
     @Override
     public void introduce() {
         super.introduce();
-        System.out.println(" 花了我100W ");
+        log.info("It cost me 100W");
     }
 }

@@ -1,7 +1,7 @@
 package org.example.design.structural.composite;
 
 /**
- *  叶节点(商品节点)，无子节点
+ *  叶节点(商品节点), 无子节点
  * Author: GL
  * Date: 2021-10-29
  */

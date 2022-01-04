@@ -14,7 +14,7 @@ public class StockUserClient extends StockClient {
     private final String name;
 
     // 记录命令及请求操作
-    // 注意：此处的记录命令并不是快照方式，而是将原有的引用放进队列，此时如果命令修改，则队列中的元素也会修改，并不会起到快照作用，所以此处有漏洞，解决参考备忘录模式
+    // 注意：此处的记录命令并不是快照方式, 而是将原有的引用放进队列, 此时如果命令修改, 则队列中的元素也会修改, 并不会起到快照作用, 解决参考备忘录模式[memento]
     @Override
     public void send(StockCommand... stockCommand) {
         for (StockCommand command : stockCommand) {

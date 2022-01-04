@@ -22,7 +22,7 @@ public interface AbstractFactory {
             case VICTORIAN:
                 return VictorianFactory.INSTANCE;
             default:
-                throw new RuntimeException("工厂类型异常");
+                throw new RuntimeException("Factory type exception");
         }
     }
 }

@@ -1,5 +1,6 @@
 package org.example.design.behavioral.command.complete;
 
+import lombok.extern.log4j.Log4j2;
 import org.example.design.behavioral.command.require.first.StockReceive;
 
 /**
@@ -8,6 +9,7 @@ import org.example.design.behavioral.command.require.first.StockReceive;
  * Author: GL
  * Date: 2021-11-05
  */
+@Log4j2
 public class StockBuyCommand extends StockCommand {
 
     protected StockBuyCommand(StockReceive stockService) {
@@ -21,7 +23,7 @@ public class StockBuyCommand extends StockCommand {
 
     @Override
     public void undo() {
-        System.out.print("撤回操作-");
+        log.info("撤回操作");
         super.getStockService().sell();
     }
 

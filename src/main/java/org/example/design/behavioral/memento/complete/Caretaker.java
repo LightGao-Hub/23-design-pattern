@@ -1,14 +1,13 @@
 package org.example.design.behavioral.memento.complete;
 
-import lombok.ToString;
-import org.example.design.behavioral.memento.simple.Memento;
-
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
-import java.util.Queue;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.stream.IntStream;
+
+import lombok.ToString;
+import org.example.design.behavioral.memento.simple.Memento;
 
 /**
  *  负责人角色类：
@@ -22,12 +21,12 @@ public class Caretaker<T> {
     private final Deque<Memento<T>> mementos = new LinkedBlockingDeque<>();
 
     public synchronized void saveMemento(Memento<T> memento) {
-        this.mementos.add(memento);
+        mementos.add(memento);
     }
 
     // 取最近一次的备份
     public Memento<T> retrieveMemento() {
-        return this.mementos.pollLast();
+        return mementos.pollLast();
     }
 
     // 重载：从后向前取出n次的备份, 包括index

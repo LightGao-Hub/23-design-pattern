@@ -3,6 +3,7 @@ package org.example.design.behavioral.listener;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.extern.log4j.Log4j2;
 
 /**
  * 被监听者
@@ -11,6 +12,7 @@ import lombok.Getter;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Log4j2
 public class Servlet extends ServletSource {
 
     @Getter
@@ -21,23 +23,18 @@ public class Servlet extends ServletSource {
     }
 
     public void init() {
-        System.out.println("初始化servlet");
+        log.info("init servlet");
         super.init(new ServletEvent(this));
     }
 
     public void destroy() {
-        System.out.println("销毁servlet");
+        log.info("destroy servlet");
         super.destroyed(new ServletEvent(this));
     }
 
 
-    public void processA() {
-        System.out.println("其他函数A");
-        super.process(new ServletEvent(this));
-    }
-
-    public void processB() {
-        System.out.println("其他函数B");
+    public void process() {
+        log.info("process");
         super.process(new ServletEvent(this));
     }
 

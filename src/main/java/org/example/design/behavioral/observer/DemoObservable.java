@@ -1,28 +1,33 @@
 package org.example.design.behavioral.observer;
 
-import lombok.Data;
-
 import java.util.Observable;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.extern.log4j.Log4j2;
+
 
 /**
  *  被观察者
  * Author: GL
  * Date: 2021-10-24
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
+@Log4j2
 public class DemoObservable extends Observable {
 
     private String name;
     private int age;
 
     public void init() {
-        System.out.println("初始化demo");
+        log.info("init ");
         this.setChanged();
         this.notifyObservers();
     }
 
     public void destroy() {
-        System.out.println("销毁demo");
+        log.info("destroy ");
         this.setChanged();
         this.notifyObservers();
     }

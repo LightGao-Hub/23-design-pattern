@@ -1,24 +1,27 @@
 package org.example.design.javaee.callback.asynchronous;
 
+import lombok.extern.log4j.Log4j2;
+
 /**
  *  消息请求实现类
  *
  * Author: GL
  * Date: 2021-10-25
  */
+@Log4j2
 public class CallbackMessageClient extends CallbackClient<Integer> {
 
     public Integer send(Integer message) {
-        System.out.println("开始进行异步消息的推送");
+        log.info("Start pushing asynchronous messages");
         return super.getServer().receive(message);
     }
 
     public void success(Integer result) {
-        System.out.println(" onSuccess result: " + result);
+        log.info(" onSuccess result: " + result);
     }
 
     public void failure(Throwable t) {
-        System.out.println(" onFailure Throwable t.getMessage() = " + t.getMessage());
+        log.info(" onFailure Throwable t.getMessage() = " + t.getMessage());
     }
 
     public CallbackMessageClient(Server<Integer> server) {

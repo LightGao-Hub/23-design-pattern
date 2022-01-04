@@ -7,9 +7,8 @@ package org.example.design.creative.build.complete;
  * Author: GL
  * Date: 2021-12-03
  */
-public enum HouseDirector {
-    ;
-
+public enum HouseDirector { ;
+    @SuppressWarnings("checkstyle:magicnumber")
     public static House makeGarageHouseBuilder() {
         return new GarageHouseBuilder().windows(1)
                 .doors(1)
@@ -17,7 +16,7 @@ public enum HouseDirector {
                 .hasGarage(true)
                 .getHouse();
     }
-
+    @SuppressWarnings("checkstyle:magicnumber")
     public static House makeSwimPoolHouseBuilder() {
         return new SwimPoolHouseBuilder().windows(2)
                 .doors(2)
@@ -25,7 +24,7 @@ public enum HouseDirector {
                 .hasSwimPool(true)
                 .getHouse();
     }
-
+    @SuppressWarnings("checkstyle:magicnumber")
     public static House makeGardenHouseBuilder() {
         return new GardenHouseBuilder().windows(3)
                 .doors(3)
@@ -33,7 +32,7 @@ public enum HouseDirector {
                 .hasGarden(true)
                 .getHouse();
     }
-
+    @SuppressWarnings("checkstyle:magicnumber")
     public static House makeGardenSwimPoolHouseBuilder() {
         return new GardenSwimPoolHouseBuilder().windows(4)
                 .doors(4)
@@ -42,6 +41,4 @@ public enum HouseDirector {
                 .hasSwimPool(true)
                 .getHouse();
     }
-
-
 }

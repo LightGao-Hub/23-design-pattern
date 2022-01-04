@@ -1,10 +1,13 @@
 package org.example.design.structural.proxy.statics;
 
+import lombok.extern.log4j.Log4j2;
+
 /**
  *  静态代理类
  * Author: GL
  * Date: 2021-10-28
  */
+@Log4j2
 public class UserDaoProxy implements UserDao {
 
     private final UserDao dao;
@@ -14,16 +17,16 @@ public class UserDaoProxy implements UserDao {
     }
 
     @Override
-    public void save(String name) {
-        System.out.println("开启事务");//额外扩展了功能
-        dao.save(name);
-        System.out.println("提交事务");
+    public void save(String data) {
+        log.info("Open transaction"); //额外扩展了功能
+        dao.save(data);
+        log.info("Commit transaction");
     }
 
     @Override
     public void update() {
-        System.out.println("开启事务");//额外扩展了额外功能
+        log.info("Open transaction"); //额外扩展了功能
         dao.update();
-        System.out.println("提交事务");
+        log.info("Commit transaction");
     }
 }

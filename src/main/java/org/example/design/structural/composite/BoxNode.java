@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- *  容器节点(盒子)，可以继续放入商品
+ *  容器节点(盒子), 可以继续放入商品
  * Author: GL
  * Date: 2021-10-29
  */
@@ -26,7 +26,7 @@ public class BoxNode implements Node {
         return this;
     }
 
-    // 循环调用子节点的totalPrice函数即可，无需关心子节点的实现
+    // 循环调用子节点的totalPrice函数即可, 无需关心子节点的实现
     @Override
     public double totalPrice() {
         double totalPrice = this.price;

@@ -1,12 +1,12 @@
 package org.example.design.behavioral.memento.simple;
 
-import lombok.ToString;
-
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import lombok.ToString;
+
 /**
- *  负责人角色类，负责人角色类负责保存备忘录对象，但是从不修改（甚至不查看）备忘录对象的内容。
+ *  负责人角色类, 负责人角色类负责保存备忘录对象, 但是从不修改（甚至不查看）备忘录对象的内容.
  *
  * Author: GL
  * Date: 2021-11-15
@@ -25,7 +25,7 @@ public class Caretaker<T> {
 
     // 备忘录取最近一次的备份
     public Memento<T> retrieveMemento() {
-        return this.mementos.get(currentIndex-1);
+        return this.mementos.get(currentIndex - 1);
     }
 
     // 重载-取出第几次备份

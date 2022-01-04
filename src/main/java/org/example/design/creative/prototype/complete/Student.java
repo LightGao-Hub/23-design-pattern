@@ -1,11 +1,14 @@
 package org.example.design.creative.prototype.complete;
 
+import lombok.extern.log4j.Log4j2;
+
 /**
  *  学生：实现克隆子类
  *
  * Author: GL
  * Date: 2021-12-06
  */
+@Log4j2
 public class Student extends Person {
 
     public Student(long id, String name) {
@@ -14,7 +17,7 @@ public class Student extends Person {
 
     @Override
     public void run() {
-        System.out.println("Student run");
+        log.info("Student run");
     }
 
     // 实现克隆函数

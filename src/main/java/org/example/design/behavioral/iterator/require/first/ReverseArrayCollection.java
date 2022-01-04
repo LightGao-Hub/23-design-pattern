@@ -1,9 +1,9 @@
 package org.example.design.behavioral.iterator.require.first;
 
-import lombok.Data;
-
 import java.util.Arrays;
 import java.util.Iterator;
+
+import lombok.Data;
 
 /**
  *  集合类：直接实现Iterator
@@ -19,6 +19,7 @@ public class ReverseArrayCollection<T> implements Iterator<T> {
     // 索引位置:
     private int index;
 
+    @SafeVarargs
     public ReverseArrayCollection(T... objs) {
         this.array = Arrays.copyOfRange(objs, 0, objs.length);
         this.index = this.array.length;

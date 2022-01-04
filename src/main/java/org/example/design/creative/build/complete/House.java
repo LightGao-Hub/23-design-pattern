@@ -1,13 +1,14 @@
 package org.example.design.creative.build.complete;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 
 /**
  * Author: GL
  * Date: 2021-12-02
  */
 @Data
+@Log4j2
 public class House {
 
     private int windows;
@@ -19,7 +20,7 @@ public class House {
 
     // 方便测试
     public void print() {
-        System.out.println(this);
+        log.info(this);
     }
 
 }

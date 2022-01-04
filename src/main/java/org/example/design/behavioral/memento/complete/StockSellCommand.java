@@ -39,7 +39,7 @@ public class StockSellCommand extends StockCommand {
     @Override
     protected StockSellCommand clone() {
         try {
-            return (StockSellCommand)super.clone();
+            return (StockSellCommand) super.clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
             return null;
@@ -48,6 +48,6 @@ public class StockSellCommand extends StockCommand {
 
     @Override
     public void restoreMemento(Memento<StockCommand> memento) {
-        // 由于此命令内部不存储变量，故无需实现此函数
+        // 由于此命令内部不存储变量, 故无需实现此函数
     }
 }

@@ -1,11 +1,11 @@
 package org.example.design.behavioral.mediator.require;
 
-import lombok.Getter;
-import lombok.Setter;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.log4j.Log4j2;
 
 /**
  * mysql数据库实体类
@@ -13,6 +13,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * Author: GL
  * Date: 2021-11-10
  */
+@Log4j2
 public class MysqlDatabase<T> implements Database<T> {
     @Getter
     private final List<T> dataset = new CopyOnWriteArrayList<>(); // 数据存储
@@ -23,7 +24,7 @@ public class MysqlDatabase<T> implements Database<T> {
 
     @Override
     public void receive(T data) {
-        System.out.println("Mysql 添加数据：" + data);
+        log.info("Mysql 添加数据：" + data);
         this.dataset.add(data);
     }
 
@@ -35,7 +36,7 @@ public class MysqlDatabase<T> implements Database<T> {
     }
 
     public void select() {
-        System.out.println("- Mysql 查询，数据：" + this.dataset.toString());
+        log.info("- Mysql 查询, 数据：" + this.dataset.toString());
     }
 
 }

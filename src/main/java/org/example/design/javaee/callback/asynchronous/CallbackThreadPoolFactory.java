@@ -1,11 +1,7 @@
 package org.example.design.javaee.callback.asynchronous;
 
-
-import com.google.common.base.Preconditions;
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.ListeningExecutorService;
-import com.google.common.util.concurrent.MoreExecutors;
+import static com.google.common.util.concurrent.Futures.addCallback;
+import static com.google.common.util.concurrent.Futures.withTimeout;
 
 import java.util.Objects;
 import java.util.concurrent.Callable;
@@ -14,8 +10,14 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import static com.google.common.util.concurrent.Futures.addCallback;
-import static com.google.common.util.concurrent.Futures.withTimeout;
+import com.google.common.base.Preconditions;
+import com.google.common.util.concurrent.FutureCallback;
+import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.ListeningExecutorService;
+import com.google.common.util.concurrent.MoreExecutors;
+import lombok.extern.log4j.Log4j2;
+import org.example.design.config.FinalConfig;
+
 
 /**
  *  CallbackThreadPool单例工厂类
@@ -23,23 +25,26 @@ import static com.google.common.util.concurrent.Futures.withTimeout;
  * Author: GL
  * Date: 2021-10-25
  */
+@Log4j2
 public enum CallbackThreadPoolFactory {
-    ;// 无实例，对外只开放静态函数
+    ; // 无实例, 对外只开放静态函数
 
     public static CallbackThreadPool create(int poolSize, int timeOut) {
+        log.info("create CallbackThreadPool ...");
         return new CallbackThreadPool(poolSize, timeOut);
     }
 
     public static CallbackThreadPool create() {
-        return new CallbackThreadPool(1, 60);
+        return new CallbackThreadPool(FinalConfig.ONEC, FinalConfig.TIME_OUT);
     }
 
 
     /**
-     *  异步调用线程池，核心采用google的ListeningExecutorService线程池完成，通过泛型方法实现类型兼容
-     *  默认线程池大小为poolSize = 5，监控超时线程池大小poolOutTimeSize = 1
+     *  异步调用线程池, 核心采用google的ListeningExecutorService线程池完成, 通过泛型方法实现类型兼容
+     *  默认线程池大小为poolSize = 5, 监控超时线程池大小poolOutTimeSize = 1
      */
-    static class CallbackThreadPool {
+    @Log4j2
+    static final class CallbackThreadPool {
         private final int timeOut;  // 线程超时时间-单位秒
         private final ScheduledThreadPoolExecutor timerService;
         private final ExecutorService callBackService;
@@ -58,7 +63,7 @@ public enum CallbackThreadPoolFactory {
                 ListenableFuture<E> timeoutFuture = withTimeout(resultFuture, timeOut, TimeUnit.SECONDS, timerService);
                 addCallback(timeoutFuture, futureCallback, callBackService);
             } catch (Exception e) {
-                System.out.println("创建异常");
+                log.info("创建异常");
             }
         }
 

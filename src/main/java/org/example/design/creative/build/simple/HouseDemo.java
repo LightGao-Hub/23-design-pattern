@@ -37,7 +37,8 @@ public class HouseDemo {
 
     @Override
     public String toString() {
-        return "HouseDemo{" + "windows=" + windows + ", doors=" + doors + ", rooms=" + rooms + ", hasGarage=" + hasGarage + ", hasSwimPool=" + hasSwimPool + ", hasGarden=" + hasGarden + '}';
+        return "HouseDemo{" + "windows=" + windows + ", doors=" + doors + ", rooms=" + rooms + ", hasGarage="
+                + hasGarage + ", hasSwimPool=" + hasSwimPool + ", hasGarden=" + hasGarden + '}';
     }
 
     // 核心静态类
@@ -49,7 +50,7 @@ public class HouseDemo {
         private boolean hasSwimPool;
         private boolean hasGarden;
 
-        HouseDemoBuilder(){
+        HouseDemoBuilder() {
         }
 
         // 核心代码

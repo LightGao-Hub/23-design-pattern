@@ -2,7 +2,7 @@ package org.example.design.creative.build.complete;
 
 
 /**
- *  房间建造者接口，提供各个属性的接口函数
+ *  房间建造者接口, 提供各个属性的接口函数
  *
  * Author: GL
  * Date: 2021-12-03
