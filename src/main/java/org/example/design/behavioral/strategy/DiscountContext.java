@@ -1,6 +1,7 @@
 package org.example.design.behavioral.strategy;
 
 import java.math.BigDecimal;
+import java.util.function.Function;
 
 import lombok.Getter;
 
@@ -18,5 +19,5 @@ public abstract class DiscountContext implements Context {
     }
 
     // 根据策略计算价格
-    protected abstract BigDecimal calculatePrice(DiscountStrategy discountStrategy);
+    protected abstract BigDecimal calculatePrice(Function<BigDecimal, BigDecimal> discountStrategy);
 }

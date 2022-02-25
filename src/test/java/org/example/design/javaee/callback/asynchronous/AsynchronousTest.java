@@ -17,8 +17,8 @@ import java.util.Random;
  *  │CallbackClient                                                         │                        │MessageServer │
  *  │ └callbackPool = AsynchronousCallback.INSTANCE.getCallbackThreadPool() │──────────────────┐     │ └receive(){} │
  *  │ └sendMessage() { this.callbackPool.addCallable(                       │                  │     └──────────────┘
- *  │       add(), success(), failure() ) };                               │                  │
- *  │ └abstract add()                                                      │                  │
+ *  │       add(), success(), failure() ) };                                │                  │
+ *  │ └abstract add()                                                       │                  │
  *  │ └abstract success()                                                   │                  │
  *  │ └abstract failure()                                                   │                  │
  *  └───────────────────────────────────────────────────────────────────────┘                  │
