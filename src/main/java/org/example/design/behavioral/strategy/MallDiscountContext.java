@@ -2,7 +2,6 @@ package org.example.design.behavioral.strategy;
 
 import java.math.BigDecimal;
 import java.util.Objects;
-import java.util.function.Function;
 
 /**
  *  商场上下文实现类
@@ -17,7 +16,7 @@ public class MallDiscountContext extends DiscountContext {
     }
 
     @Override
-    protected BigDecimal calculatePrice(Function<BigDecimal, BigDecimal> discountStrategy) {
+    protected BigDecimal calculatePrice(Strategy discountStrategy) {
         Objects.requireNonNull(super.getTotalPrice(), "TotalPrice cannot be empty");
         Objects.requireNonNull(discountStrategy, "Policy cannot be empty");
         return discountStrategy.apply(super.getTotalPrice());
