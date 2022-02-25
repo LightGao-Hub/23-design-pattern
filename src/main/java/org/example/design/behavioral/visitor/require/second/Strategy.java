@@ -1,4 +1,4 @@
-package org.example.design.behavioral.strategy;
+package org.example.design.behavioral.visitor.require.second;
 
 /**
  *  策略接口
