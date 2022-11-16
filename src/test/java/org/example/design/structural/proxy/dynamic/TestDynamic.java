@@ -50,8 +50,9 @@ public class TestDynamic {
     private static final UserDao proxyLog;
 
     static {
-        proxyAffair = new ProxyFactoryAffair(new UserDaoImpl()).getProxyInstance();
-        proxyLog = new ProxyFactoryLog(new UserDaoImpl()).getProxyInstance();
+        UserDao userDao = new UserDaoImpl();
+        proxyAffair = new ProxyFactoryAffair(userDao).getProxyInstance();
+        proxyLog = new ProxyFactoryLog(userDao).getProxyInstance();
     }
 
     @Test

@@ -10,6 +10,17 @@ import lombok.extern.log4j.Log4j2;
  */
 @Log4j2
 public class CEOStrategy extends CompanyStrategy {
+
+    private CEOStrategy(){}
+
+    private static class CEOStrategySingle {
+        private static final CEOStrategy INSTANCE = new CEOStrategy();
+    }
+
+    public static CEOStrategy getInstance() {
+        return CEOStrategy.CEOStrategySingle.INSTANCE;
+    }
+
     @Override
     protected void strategy(Staff staff) {
         // 通过员工类型判断进行强转后操作
@@ -27,4 +38,5 @@ public class CEOStrategy extends CompanyStrategy {
                 throw new RuntimeException(String.format("There is no such employee type: %s", staff.getStaffType()));
         }
     }
+
 }
