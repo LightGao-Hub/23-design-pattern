@@ -14,8 +14,9 @@ package org.example.design.principle.first;
  *  单一职责原则的核心就是一个类只负责一类职责！
  *
  *  例如：
- *      1、arrayList类就只有围绕着集合的一类职责！即便有add, remove等多个函数, 但职责都是围绕着集合系列
- *      2、备忘录模式中最少需要抽象成三个类, 因为每个类负责一个职责, 详细参看[behavioral.memento包]
+ *      1、redisUtil工具类只负责redis的常用操作，至于在redis之上的业务需求则需要在上层创建service业务类
+ *      2、arrayList类就只有围绕着集合的一类职责！即便有add, remove等多个函数, 但职责都是围绕着集合系列
+ *      3、备忘录模式中最少需要抽象成三个类, 因为每个类负责一个职责, 详细参看[behavioral.memento包]
  *
  * Author: GL
  * Date: 2021-12-08

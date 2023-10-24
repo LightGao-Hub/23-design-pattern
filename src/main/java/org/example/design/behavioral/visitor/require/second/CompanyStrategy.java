@@ -1,7 +1,5 @@
 package org.example.design.behavioral.visitor.require.second;
 
-import org.example.design.behavioral.strategy.Strategy;
-
 /**
  *  公司评绩效策略基类
  *

@@ -32,7 +32,7 @@ import org.junit.Test;
  *   │enum ArtDecoFactory      │       │enum VictorianFactory     │                  │                         │                    │
  *   │ └createChair(){}        │       │ └createChair(){}         │     ┌──────────────────────┐       ┌───────────────┐     ┌────────────────┐
  *   │ └createSofa(){}         │       │ └createSofa(){}          │     │ ArtDecoCoffeeTable   │       │ ArtDecoSofa   │     │ ArtDecoChair   │
- *   │ └createCoffeeTable(){}  │       │ └createCoffeeTable(){}   │     │  ...                │       │  ...         │     │  ...          │
+ *   │ └createCoffeeTable(){}  │       │ └createCoffeeTable(){}   │     │  ...                 │       │  ...          │     │  ...           │
  *   └─────────────────────────┘       └──────────────────────────┘     │ VictorianCoffeeTable │       │ VictorianSofa │     │ VictorianChair │
  *            │                                     │                   └──────────────────────┘       └───────────────┘     └────────────────┘
  *            │                                     │                                ▲                          ▲                    ▲

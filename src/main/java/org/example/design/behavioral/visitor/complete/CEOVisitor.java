@@ -10,6 +10,17 @@ import lombok.extern.log4j.Log4j2;
  */
 @Log4j2
 public class CEOVisitor implements Visitor {
+
+    private CEOVisitor(){}
+
+    private static class CEOVisitorSingle {
+        private static final CEOVisitor INSTANCE = new CEOVisitor();
+    }
+
+    public static CEOVisitor getInstance() {
+        return CEOVisitor.CEOVisitorSingle.INSTANCE;
+    }
+
     @Override
     public void visit(EngineerStaff engineerStaff) {
         log.info(String.format("engineer: %s, KPI: %s", engineerStaff.getName(), engineerStaff.getKpi()));

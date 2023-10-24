@@ -16,9 +16,9 @@ public class MallDiscountContext extends DiscountContext {
     }
 
     @Override
-    protected BigDecimal calculatePrice(DiscountStrategy discountStrategy) {
+    protected BigDecimal calculatePrice(Strategy discountStrategy) {
         Objects.requireNonNull(super.getTotalPrice(), "TotalPrice cannot be empty");
         Objects.requireNonNull(discountStrategy, "Policy cannot be empty");
-        return discountStrategy.getDiscount(super.getTotalPrice());
+        return discountStrategy.apply(super.getTotalPrice());
     }
 }

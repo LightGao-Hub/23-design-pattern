@@ -18,5 +18,5 @@ public abstract class DiscountContext implements Context {
     }
 
     // 根据策略计算价格
-    protected abstract BigDecimal calculatePrice(DiscountStrategy discountStrategy);
+    protected abstract BigDecimal calculatePrice(Strategy discountStrategy);
 }

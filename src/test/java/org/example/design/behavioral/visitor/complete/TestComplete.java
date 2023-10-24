@@ -55,8 +55,8 @@ public class TestComplete {
         // 构建报表
         CompanyReport report = new BusinessReport();
         log.info("=========== CEO看报表 ===========");
-        report.showReport(new CEOVisitor());
+        report.showReport(CEOVisitor.getInstance());
         log.info("=========== CTO看报表 ===========");
-        report.showReport(new CTOVisitor());
+        report.showReport(CTOVisitor.getInstance());
     }
 }

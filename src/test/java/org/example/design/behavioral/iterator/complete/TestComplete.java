@@ -48,7 +48,7 @@ public class TestComplete {
             for (Integer integer : integers) {
                 log.info(String.format(" %s - %s", Thread.currentThread().getName(), integer));
             }
-        }).start();
+        }, "first").start();
 
         // 此时插入元素不报错
         integers.add(7);
@@ -58,7 +58,7 @@ public class TestComplete {
             for (Integer integer : integers) {
                 log.info(String.format(" %s - %s", Thread.currentThread().getName(), integer));
             }
-        }).start();
+        }, "second").start();
 
         // 此时删除数据, 迭代器会报错
         // integers.remove(3);

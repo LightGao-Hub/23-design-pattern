@@ -44,8 +44,8 @@ public class TestSecond {
         // 构建报表
         CompanyReport report = new ShowStaffReport();
         log.info("=========== CEO看报表 ===========");
-        report.showReport(new CEOStrategy());
+        report.showReport(CEOStrategy.getInstance());
         log.info("=========== CTO看报表 ===========");
-        report.showReport(new CTOStrategy());
+        report.showReport(CTOStrategy.getInstance());
     }
 }

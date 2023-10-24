@@ -19,7 +19,7 @@ public class ShowStaffReport extends CompanyReport {
 
     // 根据策略实现员工报表
     public void showReport(CompanyStrategy companyStrategy) {
-        for (Staff staff : super.getMStaffs()) {
+        for (Staff staff : getMStaffs()) {
             companyStrategy.strategy(staff);
         }
     }
